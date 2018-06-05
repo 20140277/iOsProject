@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03801F7820C677D900FDDDC0 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03801F7720C677D900FDDDC0 /* DashboardViewController.swift */; };
+		0C31A01A9C83016A1EF8520C /* BusinessPartner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0103E85A72E34F6FE4BB002 /* BusinessPartner.swift */; };
+		1277F7611F8E66AF0060AF58 /* SAPLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1277F7601F8E66AC0060AF58 /* SAPLogo@2x.png */; };
+		128604DA1E55B41600C698B5 /* SAPCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128604D91E55B41600C698B5 /* SAPCommon.framework */; };
+		128604DB1E55B43B00C698B5 /* SAPCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 128604D91E55B41600C698B5 /* SAPCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		128B53061F8E667000E64DF6 /* SnapshotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128B53051F8E667000E64DF6 /* SnapshotViewController.swift */; };
+		12D066CF1F4DDB0E0075EBA4 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		12E07EF21E96851800460A94 /* CollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E07EF11E96851800460A94 /* CollectionType.swift */; };
+		12E84FE31F4ECC4A0061C99E /* SAPFioriFlows.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E84FE21F4ECC3E0061C99E /* SAPFioriFlows.framework */; };
+		12E84FE41F4ECC4A0061C99E /* SAPFioriFlows.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 12E84FE21F4ECC3E0061C99E /* SAPFioriFlows.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		12E84FE51F4ECF220061C99E /* OnboardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E84FDE1F4EBD460061C99E /* OnboardingManager.swift */; };
+		23FC507BE9208A9E0F0A8051 /* GWSAMPLEBASICEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547EC2A69A909606F8DDF74C /* GWSAMPLEBASICEntities.swift */; };
+		31784CBA4B4F63AAB07D425F /* VHCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2089580757143615D193910E /* VHCurrency.swift */; };
+		3B83E19D85FE114BE1A220D1 /* GWSAMPLEBASICEntitiesMetadataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5D9A12AA88FD0E06772974 /* GWSAMPLEBASICEntitiesMetadataParser.swift */; };
+		416A3E4908C94ED5D4BBEF1C /* SalesOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C2CA549320613632EB6862 /* SalesOrder.swift */; };
+		45C8B57D8CD09922AD8737FF /* GWSAMPLEBASICEntitiesMetadataText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CD07CC2F1DDEC9ED85A11 /* GWSAMPLEBASICEntitiesMetadataText.swift */; };
+		4D83A1342FB5C01AE9575140 /* CTAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAE272DD9CFF4017EDB27FF /* CTAddress.swift */; };
+		63A9FE981CC45568124ABF1B /* VHLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CE268D1C6764DDDAFFE2CC /* VHLanguage.swift */; };
+		75218F33DD88B4E9F60E5782 /* VHUnitQuantity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3FC2D6F137923064585C0 /* VHUnitQuantity.swift */; };
+		755533981F25FD330017A1BC /* SAPOfflineOData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 755533971F25FD2A0017A1BC /* SAPOfflineOData.framework */; };
+		755533991F25FD330017A1BC /* SAPOfflineOData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 755533971F25FD2A0017A1BC /* SAPOfflineOData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		756192211DBE1A99007F562C /* SAPOData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7561921A1DBE1A90007F562C /* SAPOData.framework */; };
+		756192221DBE1A99007F562C /* SAPOData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7561921A1DBE1A90007F562C /* SAPOData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7569DA531E5C717C00C5D751 /* SAPFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7569DA511E5C716A00C5D751 /* SAPFoundation.framework */; };
+		7569DA541E5C717C00C5D751 /* SAPFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7569DA511E5C716A00C5D751 /* SAPFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		759BA2701E6821A7001C32BA /* SAPFiori.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759BA26F1E6821A7001C32BA /* SAPFiori.framework */; };
+		759BA2721E6821AF001C32BA /* SAPFiori.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 759BA26F1E6821A7001C32BA /* SAPFiori.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		75AC42D41DAF824D00B445FF /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AC42CE1DAF824D00B445FF /* CollectionsViewController.swift */; };
+		7A1315B91D4B982000A5DA56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1315B81D4B982000A5DA56 /* AppDelegate.swift */; };
+		7A1315C21D4B982000A5DA56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A1315C11D4B982000A5DA56 /* Assets.xcassets */; };
+		7A1315C51D4B982000A5DA56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A1315C31D4B982000A5DA56 /* LaunchScreen.storyboard */; };
+		7A16F06D1FD1B3C700D2FABD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7A16F06C1FD1B3C700D2FABD /* README.md */; };
+		7A26CA1C1F31BA8800B156B6 /* CellCreationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A26CA1B1F31BA8800B156B6 /* CellCreationHelper.swift */; };
+		7A9F6FF61F3883D3000A1815 /* SAPFioriLoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F6FF51F3883D3000A1815 /* SAPFioriLoadingIndicator.swift */; };
+		7C3672B99C730E0FCFD98559 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D9A326D7848EC7282E8D7F /* Product.swift */; };
+		918B08A0193F68B66B7EDFD6 /* VHCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA5DEF449F71BC4873B715F /* VHCategory.swift */; };
+		A47BEA13654F457C2FF895C6 /* VHAddressType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072D15932EC915B129B09E7E /* VHAddressType.swift */; };
+		A68628967B46319000C3DE0B /* SalesOrderLineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F7C56DB30DD9A206B204C4 /* SalesOrderLineItem.swift */; };
+		ADB888310BF8B6E14080AC1D /* VHUnitLength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6D3FA1AFAF49DD64C6B4B5 /* VHUnitLength.swift */; };
+		AF9ECC5720259F5C72040323 /* CTString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7722112F2A7CCB68D008E9 /* CTString.swift */; };
+		B4030B36B3CCC04A671D085F /* VHCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DFD4966CD29B59A1B74413 /* VHCountry.swift */; };
+		B960BC9A7A179E012F7A0781 /* GWSAMPLEBASICEntitiesMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2113E026217F95FEE149B038 /* GWSAMPLEBASICEntitiesMetadata.swift */; };
+		C4045A18C281280DBACFCB11 /* GWSAMPLEBASICEntitiesMetadataChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0447A09B27B4F216284B05 /* GWSAMPLEBASICEntitiesMetadataChanges.swift */; };
+		C77A7AE39EB0F735BB2641BB /* GWSAMPLEBASICEntitiesStaticResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398CEFF07E7F1273302A3877 /* GWSAMPLEBASICEntitiesStaticResolver.swift */; };
+		C9A48663A33E7730C45BCD39 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C4520519C64661D3CAE104 /* Contact.swift */; };
+		CBCA7A991E3778A9001AF49E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBCA7A9B1E3778A9001AF49E /* Main.storyboard */; };
+		CE9275C9E074CA2C2BCABE54 /* VHUnitWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BFB4657753A1A7B5A06BC1 /* VHUnitWeight.swift */; };
+		D5A1C8E76538FB7E2021E865 /* VHBPRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9329091ACA2295CFC28CD /* VHBPRole.swift */; };
+		E3768B05FAD71BE0F693BBA3 /* GWSAMPLEBASICEntitiesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E9BB6B7CAF292FA2BEB322 /* GWSAMPLEBASICEntitiesFactory.swift */; };
+		E8E50680F706F6F3A1C4FAAF /* VHSex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A8FA0A942302C4D5069A6D /* VHSex.swift */; };
+		F92BB8A9844DC527E390901C /* VHProductTypeCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64453B23C5091CD8FB368CDF /* VHProductTypeCode.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		758AC1C31D5A265200311F39 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7569DA541E5C717C00C5D751 /* SAPFoundation.framework in Embed Frameworks */,
+				12E84FE41F4ECC4A0061C99E /* SAPFioriFlows.framework in Embed Frameworks */,
+				128604DB1E55B43B00C698B5 /* SAPCommon.framework in Embed Frameworks */,
+				755533991F25FD330017A1BC /* SAPOfflineOData.framework in Embed Frameworks */,
+				756192221DBE1A99007F562C /* SAPOData.framework in Embed Frameworks */,
+				759BA2721E6821AF001C32BA /* SAPFiori.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		03801F7720C677D900FDDDC0 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		072D15932EC915B129B09E7E /* VHAddressType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VHAddressType.swift; path = "Proxy Classes/es5_ios/public/VHAddressType.swift"; sourceTree = "<group>"; };
+		10DFD4966CD29B59A1B74413 /* VHCountry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VHCountry.swift; path = "Proxy Classes/es5_ios/public/VHCountry.swift"; sourceTree = "<group>"; };
+		1277F7601F8E66AC0060AF58 /* SAPLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SAPLogo@2x.png"; sourceTree = "<group>"; };
+		128604D91E55B41600C698B5 /* SAPCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPCommon.framework; sourceTree = "<group>"; };
+		128B53051F8E667000E64DF6 /* SnapshotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotViewController.swift; sourceTree = "<group>"; };
+		12E07EF11E96851800460A94 /* CollectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionType.swift; sourceTree = "<group>"; };
+		12E84FDE1F4EBD460061C99E /* OnboardingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingManager.swift; sourceTree = "<group>"; };
+		12E84FE21F4ECC3E0061C99E /* SAPFioriFlows.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPFioriFlows.framework; sourceTree = "<group>"; };
+		13A8FA0A942302C4D5069A6D /* VHSex.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VHSex.swift; path = "Proxy Classes/es5_ios/public/VHSex.swift"; sourceTree = "<group>"; };
+		13CE268D1C6764DDDAFFE2CC /* VHLanguage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VHLanguage.swift; path = "Proxy Classes/es5_ios/public/VHLanguage.swift"; sourceTree = "<group>"; };
+		15F7C56DB30DD9A206B204C4 /* SalesOrderLineItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SalesOrderLineItem.swift; path = "Proxy Classes/es5_ios/public/SalesOrderLineItem.swift"; sourceTree = "<group>"; };
+		1A7722112F2A7CCB68D008E9 /* CTString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CTString.swift; path = "Proxy Classes/es5_ios/public/CTString.swift"; sourceTree = "<group>"; };
+		2089580757143615D193910E /* VHCurrency.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VHCurrency.swift; path = "Proxy Classes/es5_ios/public/VHCurrency.swift"; sourceTree = "<group>"; };
+		2113E026217F95FEE149B038 /* GWSAMPLEBASICEntitiesMetadata.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GWSAMPLEBASICEntitiesMetadata.swift; path = "Proxy Classes/es5_ios/public/GWSAMPLEBASICEntitiesMetadata.swift"; sourceTree = "<group>"; };
+		29D9A326D7848EC7282E8D7F /* Product.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Product.swift; path = "Proxy Classes/es5_ios/public/Product.swift"; sourceTree = "<group>"; };
+		2F5D9A12AA88FD0E06772974 /* GWSAMPLEBASICEntitiesMetadataParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GWSAMPLEBASICEntitiesMetadataParser.swift; path = "Proxy Classes/es5_ios/internal/GWSAMPLEBASICEntitiesMetadataParser.swift"; sourceTree = "<group>"; };
+		398CEFF07E7F1273302A3877 /* GWSAMPLEBASICEntitiesStaticResolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GWSAMPLEBASICEntitiesStaticResolver.swift; path = "Proxy Classes/es5_ios/internal/GWSAMPLEBASICEntitiesStaticResolver.swift"; sourceTree = "<group>"; };
+		547EC2A69A909606F8DDF74C /* GWSAMPLEBASICEntities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GWSAMPLEBASICEntities.swift; path = "Proxy Classes/es5_ios/public/GWSAMPLEBASICEntities.swift"; sourceTree = "<group>"; };
+		64453B23C5091CD8FB368CDF /* VHProductTypeCode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VHProductTypeCode.swift; path = "Proxy Classes/es5_ios/public/VHProductTypeCode.swift"; sourceTree = "<group>"; };
+		755533971F25FD2A0017A1BC /* SAPOfflineOData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPOfflineOData.framework; sourceTree = "<group>"; };
+		7561921A1DBE1A90007F562C /* SAPOData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPOData.framework; sourceTree = "<group>"; };
+		7569DA511E5C716A00C5D751 /* SAPFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPFoundation.framework; sourceTree = "<group>"; };
+		759BA26F1E6821A7001C32BA /* SAPFiori.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPFiori.framework; sourceTree = "<group>"; };
+		75AC42CE1DAF824D00B445FF /* CollectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionsViewController.swift; sourceTree = "<group>"; };
+		7A1315B51D4B982000A5DA56 /* appIOSes5labTEST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appIOSes5labTEST.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A1315B81D4B982000A5DA56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7A1315C11D4B982000A5DA56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7A1315C41D4B982000A5DA56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7A1315C61D4B982000A5DA56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A16F06C1FD1B3C700D2FABD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7A26CA1B1F31BA8800B156B6 /* CellCreationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellCreationHelper.swift; sourceTree = "<group>"; };
+		7A9F6FF51F3883D3000A1815 /* SAPFioriLoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAPFioriLoadingIndicator.swift; sourceTree = "<group>"; };
+		7EA5DEF449F71BC4873B715F /* VHCategory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VHCategory.swift; path = "Proxy Classes/es5_ios/public/VHCategory.swift"; sourceTree = "<group>"; };
+		8B0447A09B27B4F216284B05 /* GWSAMPLEBASICEntitiesMetadataChanges.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GWSAMPLEBASICEntitiesMetadataChanges.swift; path = "Proxy Classes/es5_ios/internal/GWSAMPLEBASICEntitiesMetadataChanges.swift"; sourceTree = "<group>"; };
+		8B6D3FA1AFAF49DD64C6B4B5 /* VHUnitLength.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VHUnitLength.swift; path = "Proxy Classes/es5_ios/public/VHUnitLength.swift"; sourceTree = "<group>"; };
+		966CD07CC2F1DDEC9ED85A11 /* GWSAMPLEBASICEntitiesMetadataText.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GWSAMPLEBASICEntitiesMetadataText.swift; path = "Proxy Classes/es5_ios/internal/GWSAMPLEBASICEntitiesMetadataText.swift"; sourceTree = "<group>"; };
+		96C2CA549320613632EB6862 /* SalesOrder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SalesOrder.swift; path = "Proxy Classes/es5_ios/public/SalesOrder.swift"; sourceTree = "<group>"; };
+		A6C4520519C64661D3CAE104 /* Contact.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Contact.swift; path = "Proxy Classes/es5_ios/public/Contact.swift"; sourceTree = "<group>"; };
+		B0103E85A72E34F6FE4BB002 /* BusinessPartner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BusinessPartner.swift; path = "Proxy Classes/es5_ios/public/BusinessPartner.swift"; sourceTree = "<group>"; };
+		BDF3FC2D6F137923064585C0 /* VHUnitQuantity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VHUnitQuantity.swift; path = "Proxy Classes/es5_ios/public/VHUnitQuantity.swift"; sourceTree = "<group>"; };
+		CB909D801E38CA8800218154 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CDB9329091ACA2295CFC28CD /* VHBPRole.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VHBPRole.swift; path = "Proxy Classes/es5_ios/public/VHBPRole.swift"; sourceTree = "<group>"; };
+		D2E9BB6B7CAF292FA2BEB322 /* GWSAMPLEBASICEntitiesFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GWSAMPLEBASICEntitiesFactory.swift; path = "Proxy Classes/es5_ios/internal/GWSAMPLEBASICEntitiesFactory.swift"; sourceTree = "<group>"; };
+		F0BFB4657753A1A7B5A06BC1 /* VHUnitWeight.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VHUnitWeight.swift; path = "Proxy Classes/es5_ios/public/VHUnitWeight.swift"; sourceTree = "<group>"; };
+		FEAE272DD9CFF4017EDB27FF /* CTAddress.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CTAddress.swift; path = "Proxy Classes/es5_ios/public/CTAddress.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7A1315B21D4B982000A5DA56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7569DA531E5C717C00C5D751 /* SAPFoundation.framework in Frameworks */,
+				12E84FE31F4ECC4A0061C99E /* SAPFioriFlows.framework in Frameworks */,
+				756192211DBE1A99007F562C /* SAPOData.framework in Frameworks */,
+				755533981F25FD330017A1BC /* SAPOfflineOData.framework in Frameworks */,
+				128604DA1E55B41600C698B5 /* SAPCommon.framework in Frameworks */,
+				759BA2701E6821A7001C32BA /* SAPFiori.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		12D066CB1F4DDAE40075EBA4 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				12E84FDE1F4EBD460061C99E /* OnboardingManager.swift */,
+			);
+			name = Onboarding;
+			sourceTree = "<group>";
+		};
+		66453002228B2D59D31FB462 /* internal */ = {
+			isa = PBXGroup;
+			children = (
+				D2E9BB6B7CAF292FA2BEB322 /* GWSAMPLEBASICEntitiesFactory.swift */,
+				8B0447A09B27B4F216284B05 /* GWSAMPLEBASICEntitiesMetadataChanges.swift */,
+				2F5D9A12AA88FD0E06772974 /* GWSAMPLEBASICEntitiesMetadataParser.swift */,
+				966CD07CC2F1DDEC9ED85A11 /* GWSAMPLEBASICEntitiesMetadataText.swift */,
+				398CEFF07E7F1273302A3877 /* GWSAMPLEBASICEntitiesStaticResolver.swift */,
+			);
+			name = internal;
+			sourceTree = "<group>";
+		};
+		7532C1BB1D5B6917004B03AF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				12E07EF11E96851800460A94 /* CollectionType.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		755C10B41D5C63B000ECF6A2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7A9F6FF51F3883D3000A1815 /* SAPFioriLoadingIndicator.swift */,
+				7A26CA1B1F31BA8800B156B6 /* CellCreationHelper.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		75AC42C81DAF80C000B445FF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				75AC42CE1DAF824D00B445FF /* CollectionsViewController.swift */,
+				128B53051F8E667000E64DF6 /* SnapshotViewController.swift */,
+				03801F7720C677D900FDDDC0 /* DashboardViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		75D373EF1DD1FB0800888D4C /* Proxy Classes */ = {
+			isa = PBXGroup;
+			children = (
+				66453002228B2D59D31FB462 /* internal */,
+				DAB5406C7B513C323EAB7689 /* public */,
+			);
+			name = "Proxy Classes";
+			sourceTree = "<group>";
+		};
+		7A1315AC1D4B982000A5DA56 = {
+			isa = PBXGroup;
+			children = (
+				7A16F06C1FD1B3C700D2FABD /* README.md */,
+				7A1315B71D4B982000A5DA56 /* appIOSes5labTEST */,
+				7A1315B61D4B982000A5DA56 /* Products */,
+				7A1315CC1D4B990B00A5DA56 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7A1315B61D4B982000A5DA56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7A1315B51D4B982000A5DA56 /* appIOSes5labTEST.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7A1315B71D4B982000A5DA56 /* appIOSes5labTEST */ = {
+			isa = PBXGroup;
+			children = (
+				12D066CB1F4DDAE40075EBA4 /* Onboarding */,
+				7532C1BB1D5B6917004B03AF /* Model */,
+				75AC42C81DAF80C000B445FF /* ViewControllers */,
+				75D373EF1DD1FB0800888D4C /* Proxy Classes */,
+				755C10B41D5C63B000ECF6A2 /* Utils */,
+				7A1315B81D4B982000A5DA56 /* AppDelegate.swift */,
+				CBCA7A9B1E3778A9001AF49E /* Main.storyboard */,
+				7A1315C11D4B982000A5DA56 /* Assets.xcassets */,
+				7A1315C31D4B982000A5DA56 /* LaunchScreen.storyboard */,
+				1277F7601F8E66AC0060AF58 /* SAPLogo@2x.png */,
+				7A1315C61D4B982000A5DA56 /* Info.plist */,
+			);
+			path = appIOSes5labTEST;
+			sourceTree = "<group>";
+		};
+		7A1315CC1D4B990B00A5DA56 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				12E84FE21F4ECC3E0061C99E /* SAPFioriFlows.framework */,
+				755533971F25FD2A0017A1BC /* SAPOfflineOData.framework */,
+				759BA26F1E6821A7001C32BA /* SAPFiori.framework */,
+				7569DA511E5C716A00C5D751 /* SAPFoundation.framework */,
+				7561921A1DBE1A90007F562C /* SAPOData.framework */,
+				128604D91E55B41600C698B5 /* SAPCommon.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DAB5406C7B513C323EAB7689 /* public */ = {
+			isa = PBXGroup;
+			children = (
+				64453B23C5091CD8FB368CDF /* VHProductTypeCode.swift */,
+				96C2CA549320613632EB6862 /* SalesOrder.swift */,
+				FEAE272DD9CFF4017EDB27FF /* CTAddress.swift */,
+				8B6D3FA1AFAF49DD64C6B4B5 /* VHUnitLength.swift */,
+				13A8FA0A942302C4D5069A6D /* VHSex.swift */,
+				7EA5DEF449F71BC4873B715F /* VHCategory.swift */,
+				2113E026217F95FEE149B038 /* GWSAMPLEBASICEntitiesMetadata.swift */,
+				547EC2A69A909606F8DDF74C /* GWSAMPLEBASICEntities.swift */,
+				F0BFB4657753A1A7B5A06BC1 /* VHUnitWeight.swift */,
+				10DFD4966CD29B59A1B74413 /* VHCountry.swift */,
+				B0103E85A72E34F6FE4BB002 /* BusinessPartner.swift */,
+				1A7722112F2A7CCB68D008E9 /* CTString.swift */,
+				BDF3FC2D6F137923064585C0 /* VHUnitQuantity.swift */,
+				15F7C56DB30DD9A206B204C4 /* SalesOrderLineItem.swift */,
+				29D9A326D7848EC7282E8D7F /* Product.swift */,
+				2089580757143615D193910E /* VHCurrency.swift */,
+				072D15932EC915B129B09E7E /* VHAddressType.swift */,
+				CDB9329091ACA2295CFC28CD /* VHBPRole.swift */,
+				13CE268D1C6764DDDAFFE2CC /* VHLanguage.swift */,
+				A6C4520519C64661D3CAE104 /* Contact.swift */,
+			);
+			name = public;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7A1315B41D4B982000A5DA56 /* appIOSes5labTEST */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A1315C91D4B982000A5DA56 /* Build configuration list for PBXNativeTarget "appIOSes5labTEST" */;
+			buildPhases = (
+				7A1315B11D4B982000A5DA56 /* Sources */,
+				7A1315B21D4B982000A5DA56 /* Frameworks */,
+				7A1315B31D4B982000A5DA56 /* Resources */,
+				758AC1C31D5A265200311F39 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = appIOSes5labTEST;
+			productName = appIOSes5labTEST;
+			productReference = 7A1315B51D4B982000A5DA56 /* appIOSes5labTEST.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7A1315AD1D4B982000A5DA56 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = SAP;
+				TargetAttributes = {
+					7A1315B41D4B982000A5DA56 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = SG9XUF7LWG;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 7A1315B01D4B982000A5DA56 /* Build configuration list for PBXProject "appIOSes5labTEST" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7A1315AC1D4B982000A5DA56;
+			productRefGroup = 7A1315B61D4B982000A5DA56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7A1315B41D4B982000A5DA56 /* appIOSes5labTEST */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7A1315B31D4B982000A5DA56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A16F06D1FD1B3C700D2FABD /* README.md in Resources */,
+				7A1315C51D4B982000A5DA56 /* LaunchScreen.storyboard in Resources */,
+				12D066CF1F4DDB0E0075EBA4 /* (null) in Resources */,
+				7A1315C21D4B982000A5DA56 /* Assets.xcassets in Resources */,
+				CBCA7A991E3778A9001AF49E /* Main.storyboard in Resources */,
+				1277F7611F8E66AF0060AF58 /* SAPLogo@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7A1315B11D4B982000A5DA56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				128B53061F8E667000E64DF6 /* SnapshotViewController.swift in Sources */,
+				12E84FE51F4ECF220061C99E /* OnboardingManager.swift in Sources */,
+				7A9F6FF61F3883D3000A1815 /* SAPFioriLoadingIndicator.swift in Sources */,
+				7A26CA1C1F31BA8800B156B6 /* CellCreationHelper.swift in Sources */,
+				12E07EF21E96851800460A94 /* CollectionType.swift in Sources */,
+				75AC42D41DAF824D00B445FF /* CollectionsViewController.swift in Sources */,
+				7A1315B91D4B982000A5DA56 /* AppDelegate.swift in Sources */,
+				E3768B05FAD71BE0F693BBA3 /* GWSAMPLEBASICEntitiesFactory.swift in Sources */,
+				C4045A18C281280DBACFCB11 /* GWSAMPLEBASICEntitiesMetadataChanges.swift in Sources */,
+				3B83E19D85FE114BE1A220D1 /* GWSAMPLEBASICEntitiesMetadataParser.swift in Sources */,
+				45C8B57D8CD09922AD8737FF /* GWSAMPLEBASICEntitiesMetadataText.swift in Sources */,
+				C77A7AE39EB0F735BB2641BB /* GWSAMPLEBASICEntitiesStaticResolver.swift in Sources */,
+				F92BB8A9844DC527E390901C /* VHProductTypeCode.swift in Sources */,
+				416A3E4908C94ED5D4BBEF1C /* SalesOrder.swift in Sources */,
+				4D83A1342FB5C01AE9575140 /* CTAddress.swift in Sources */,
+				ADB888310BF8B6E14080AC1D /* VHUnitLength.swift in Sources */,
+				E8E50680F706F6F3A1C4FAAF /* VHSex.swift in Sources */,
+				918B08A0193F68B66B7EDFD6 /* VHCategory.swift in Sources */,
+				B960BC9A7A179E012F7A0781 /* GWSAMPLEBASICEntitiesMetadata.swift in Sources */,
+				03801F7820C677D900FDDDC0 /* DashboardViewController.swift in Sources */,
+				23FC507BE9208A9E0F0A8051 /* GWSAMPLEBASICEntities.swift in Sources */,
+				CE9275C9E074CA2C2BCABE54 /* VHUnitWeight.swift in Sources */,
+				B4030B36B3CCC04A671D085F /* VHCountry.swift in Sources */,
+				0C31A01A9C83016A1EF8520C /* BusinessPartner.swift in Sources */,
+				AF9ECC5720259F5C72040323 /* CTString.swift in Sources */,
+				75218F33DD88B4E9F60E5782 /* VHUnitQuantity.swift in Sources */,
+				A68628967B46319000C3DE0B /* SalesOrderLineItem.swift in Sources */,
+				7C3672B99C730E0FCFD98559 /* Product.swift in Sources */,
+				31784CBA4B4F63AAB07D425F /* VHCurrency.swift in Sources */,
+				A47BEA13654F457C2FF895C6 /* VHAddressType.swift in Sources */,
+				D5A1C8E76538FB7E2021E865 /* VHBPRole.swift in Sources */,
+				63A9FE981CC45568124ABF1B /* VHLanguage.swift in Sources */,
+				C9A48663A33E7730C45BCD39 /* Contact.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7A1315C31D4B982000A5DA56 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7A1315C41D4B982000A5DA56 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CBCA7A9B1E3778A9001AF49E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB909D801E38CA8800218154 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7A1315C71D4B982000A5DA56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7A1315C81D4B982000A5DA56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7A1315CA1D4B982000A5DA56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = SG9XUF7LWG;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = appIOSes5labTEST/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sap.appIOSes5labTEST;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		7A1315CB1D4B982000A5DA56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = SG9XUF7LWG;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = appIOSes5labTEST/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sap.appIOSes5labTEST;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7A1315B01D4B982000A5DA56 /* Build configuration list for PBXProject "appIOSes5labTEST" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A1315C71D4B982000A5DA56 /* Debug */,
+				7A1315C81D4B982000A5DA56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7A1315C91D4B982000A5DA56 /* Build configuration list for PBXNativeTarget "appIOSes5labTEST" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A1315CA1D4B982000A5DA56 /* Debug */,
+				7A1315CB1D4B982000A5DA56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7A1315AD1D4B982000A5DA56 /* Project object */;
+}
