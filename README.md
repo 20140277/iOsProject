@@ -1,2 +1,2 @@
 
-![Texte alternatif](screenshots/version1.jpg)
+![Texte alternatif](screenshots/version2.png)

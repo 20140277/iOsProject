@@ -142,6 +142,10 @@ open class GWSAMPLEBASICEntities<Provider: DataServiceProvider>: DataService<Pro
             }
         }
     }
+    open func fetchEntityCount(entity: EntitySet)throws -> Int64 {
+        let countQuery = DataQuery().from(entity).count()
+        return try self.executeQuery(countQuery).count()
+    }
 
     open func fetchSalesOrder(matching query: DataQuery) throws -> SalesOrder {
         return try CastRequired<SalesOrder>.from(self.executeQuery(query.fromDefault(GWSAMPLEBASICEntitiesMetadata.EntitySets.salesOrderSet)).requiredEntity())
@@ -200,6 +204,8 @@ open class GWSAMPLEBASICEntities<Provider: DataServiceProvider>: DataService<Pro
         }
     }
 
+
+    
     open func fetchSalesOrderSet(matching query: DataQuery = DataQuery()) throws -> Array<SalesOrder> {
         return try SalesOrder.array(from: self.executeQuery(query.fromDefault(GWSAMPLEBASICEntitiesMetadata.EntitySets.salesOrderSet)).entityList())
     }

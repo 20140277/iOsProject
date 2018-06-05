@@ -110,31 +110,41 @@ class DashboardViewController: UITableViewController, SAPFioriLoadingIndicator {
     }
     
     func initExampleData() {
+        do {
+            let salesOrderCount = try gwsampleEntites.fetchEntityCount(entity: GWSAMPLEBASICEntitiesMetadata.EntitySets.salesOrderSet)
+            
+            let kpiView1 = FUIKPIView()
+            let kpiView1Metric = FUIKPIMetricItem(string: "\(salesOrderCount)")
+            kpiView1.items = [kpiView1Metric]
+            kpiView1.captionlabel.text = "Sales Orders"
+            
+            let productCount = try gwsampleEntites.fetchEntityCount(entity: GWSAMPLEBASICEntitiesMetadata.EntitySets.productSet)
+            let kpiView2 = FUIKPIView()
+            let kpiView2Metric = FUIKPIMetricItem(string: "\(productCount)")
+            kpiView2.items = [kpiView2Metric]
+            kpiView2.captionlabel.text = "Products"
+            
+            let contactCount = try gwsampleEntites.fetchEntityCount(entity: GWSAMPLEBASICEntitiesMetadata.EntitySets.contactSet)
+            let kpiView3 = FUIKPIView()
+            let kpiView3Metric = FUIKPIMetricItem(string: "\(contactCount)")
+            kpiView3.items = [kpiView3Metric]
+            kpiView3.captionlabel.text = "Contacts"
+           
+            let partnersCount = try gwsampleEntites.fetchEntityCount(entity: GWSAMPLEBASICEntitiesMetadata.EntitySets.businessPartnerSet)
+            let kpiView4 = FUIKPIView()
+            let kpiView4Metric = FUIKPIMetricItem(string: "\(partnersCount)")
+            kpiView4.items = [kpiView4Metric]
+            kpiView4.captionlabel.text = "Partners"
+           
+            
+            kpiHeader = FUIKPIHeader(items: [kpiView1, kpiView2, kpiView3, kpiView4])
+            
+            tableView.tableHeaderView = kpiHeader
+        } catch let error
+        {
+            print(error)
+        }
         
-        let kpiView1 = FUIKPIView()
-        let kpiView1Metric = FUIKPIMetricItem(string: "2")
-        kpiView1.items = [kpiView1Metric]
-        kpiView1.captionlabel.text = "Sales Orders"
-        
-        let kpiView2 = FUIKPIView()
-        let kpiView2Metric = FUIKPIMetricItem(string: "5")
-        kpiView2.items = [kpiView2Metric]
-        kpiView2.captionlabel.text = "Products"
-        
-        let kpiView3 = FUIKPIView()
-        let kpiView3Metric = FUIKPIMetricItem(string: "4")
-        kpiView3.items = [kpiView3Metric]
-        kpiView3.captionlabel.text = "Contacts"
-        
-        let kpiView4 = FUIKPIView()
-        let kpiView4Metric = FUIKPIMetricItem(string: "294")
-        kpiView4.items = [kpiView4Metric]
-        kpiView4.captionlabel.text = "Partners"
-        kpiView4.captionlabel.numberOfLines = 2
-        
-        kpiHeader = FUIKPIHeader(items: [kpiView1, kpiView2, kpiView3, kpiView4])
-        
-        tableView.tableHeaderView = kpiHeader
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
