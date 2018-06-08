@@ -13,23 +13,16 @@
         <scene sceneID="x8X-T9-oIJ">
             <objects>
                 <viewController storyboardIdentifier="DashboardViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qBc-xg-ONK" customClass="DashboardViewController" customModule="appIOSes5labTEST" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sk3-Sh-MkV">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gxz-H1-tnX">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1302"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sWC-zG-XI9">
-                            <rect key="frame" x="0.0" y="0.0" width="1024" height="20"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.11261776848597127" green="0.54746194948186533" blue="0.13685385889119003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <state key="normal" title="Online">
-                                <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                            </state>
-                        </button>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Simple ERP" id="WNK-6W-eXH"/>
                     <connections>
-                        <outlet property="tableView" destination="sk3-Sh-MkV" id="E4z-K9-dgG"/>
+                        <outlet property="myTableView" destination="gxz-H1-tnX" id="uWw-6X-kPu"/>
+                        <segue destination="Erk-k9-H3C" kind="show" identifier="showContacts" id="6iD-w5-GG9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ciN-gl-EnF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -43,7 +36,43 @@
                     </connections>
                 </pinchGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1468" y="-804"/>
+            <point key="canvasLocation" x="1830" y="-1152"/>
+        </scene>
+        <!--Contact View Controller-->
+        <scene sceneID="oL4-Yf-a3E">
+            <objects>
+                <viewController storyboardIdentifier="ContactViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Erk-k9-H3C" customClass="ContactViewController" customModule="appIOSes5labTEST" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="swa-f8-hht">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tableView>
+                    <connections>
+                        <outlet property="tableView" destination="swa-f8-hht" id="qD5-cX-aLv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ug3-js-m4x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2486" y="-1152"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ce2-NK-N6g">
+            <objects>
+                <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2ly-hu-24B" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="soP-CB-BrR" customClass="FUINavigationBar" customModule="SAPFiori">
+                        <rect key="frame" x="0.0" y="20" width="1024" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qBc-xg-ONK" kind="relationship" relationship="rootViewController" id="44N-Ym-fl7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Xc-WB-ERJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1080" y="-1152"/>
         </scene>
     </scenes>
 </document>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0334FE1920C93A740099A668 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334FE1820C93A740099A668 /* ContactViewController.swift */; };
+		035EAB2220C7DEE0008E076E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035EAB2120C7DEE0008E076E /* Utils.swift */; };
 		03801F7820C677D900FDDDC0 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03801F7720C677D900FDDDC0 /* DashboardViewController.swift */; };
 		0C31A01A9C83016A1EF8520C /* BusinessPartner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0103E85A72E34F6FE4BB002 /* BusinessPartner.swift */; };
 		1277F7611F8E66AF0060AF58 /* SAPLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1277F7601F8E66AC0060AF58 /* SAPLogo@2x.png */; };
@@ -80,6 +82,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0334FE1820C93A740099A668 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		035EAB2120C7DEE0008E076E /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		03801F7720C677D900FDDDC0 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		072D15932EC915B129B09E7E /* VHAddressType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VHAddressType.swift; path = "Proxy Classes/es5_ios/public/VHAddressType.swift"; sourceTree = "<group>"; };
 		10DFD4966CD29B59A1B74413 /* VHCountry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VHCountry.swift; path = "Proxy Classes/es5_ios/public/VHCountry.swift"; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 			children = (
 				7A9F6FF51F3883D3000A1815 /* SAPFioriLoadingIndicator.swift */,
 				7A26CA1B1F31BA8800B156B6 /* CellCreationHelper.swift */,
+				035EAB2120C7DEE0008E076E /* Utils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 				75AC42CE1DAF824D00B445FF /* CollectionsViewController.swift */,
 				128B53051F8E667000E64DF6 /* SnapshotViewController.swift */,
 				03801F7720C677D900FDDDC0 /* DashboardViewController.swift */,
+				0334FE1820C93A740099A668 /* ContactViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -375,6 +381,7 @@
 				918B08A0193F68B66B7EDFD6 /* VHCategory.swift in Sources */,
 				B960BC9A7A179E012F7A0781 /* GWSAMPLEBASICEntitiesMetadata.swift in Sources */,
 				03801F7820C677D900FDDDC0 /* DashboardViewController.swift in Sources */,
+				035EAB2220C7DEE0008E076E /* Utils.swift in Sources */,
 				23FC507BE9208A9E0F0A8051 /* GWSAMPLEBASICEntities.swift in Sources */,
 				CE9275C9E074CA2C2BCABE54 /* VHUnitWeight.swift in Sources */,
 				B4030B36B3CCC04A671D085F /* VHCountry.swift in Sources */,
@@ -383,6 +390,7 @@
 				75218F33DD88B4E9F60E5782 /* VHUnitQuantity.swift in Sources */,
 				A68628967B46319000C3DE0B /* SalesOrderLineItem.swift in Sources */,
 				7C3672B99C730E0FCFD98559 /* Product.swift in Sources */,
+				0334FE1920C93A740099A668 /* ContactViewController.swift in Sources */,
 				31784CBA4B4F63AAB07D425F /* VHCurrency.swift in Sources */,
 				A47BEA13654F457C2FF895C6 /* VHAddressType.swift in Sources */,
 				D5A1C8E76538FB7E2021E865 /* VHBPRole.swift in Sources */,
