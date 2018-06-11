@@ -61,7 +61,6 @@ class DashboardViewController: UITableViewController, SAPFioriLoadingIndicator {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
        //, self.tableView=myTableView
         initExampleData()
         initTimeLineView()
@@ -114,12 +113,18 @@ class DashboardViewController: UITableViewController, SAPFioriLoadingIndicator {
     }
     
    
-
+    @objc func handleKpiTap2(_ sender: UITapGestureRecognizer) {
+        
+        
+        self.performSegue(withIdentifier: "showProducts", sender: nil)
+        
+    }
     
-    @objc func handleKpiTap(_ sender: UITapGestureRecognizer) {
-  
+    @objc func handleKpiTap3(_ sender: UITapGestureRecognizer) {
+        
+        
         self.performSegue(withIdentifier: "showContacts", sender: nil)
-
+        
     }
     
     func initExampleData() {
@@ -136,6 +141,9 @@ class DashboardViewController: UITableViewController, SAPFioriLoadingIndicator {
             let kpiView2Metric = FUIKPIMetricItem(string: "\(productCount)")
             kpiView2.items = [kpiView2Metric]
             kpiView2.captionlabel.text = "Products"
+            let tap2 = UITapGestureRecognizer(target: self, action: #selector(self.handleKpiTap2(_:)))
+            kpiView2.addGestureRecognizer(tap2)
+            
             
             let contactCount = try Utils.fetchEntityCount(entity: GWSAMPLEBASICEntitiesMetadata.EntitySets.contactSet, entities : gwsampleEntites)
             let kpiView3 = FUIKPIView()
@@ -143,8 +151,8 @@ class DashboardViewController: UITableViewController, SAPFioriLoadingIndicator {
             kpiView3.items = [kpiView3Metric]
             kpiView3.captionlabel.text = "Contacts"
             
-            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleKpiTap(_:)))
-            kpiView3.addGestureRecognizer(tap)
+            let tap3 = UITapGestureRecognizer(target: self, action: #selector(self.handleKpiTap3(_:)))
+            kpiView3.addGestureRecognizer(tap3)
             
             
            

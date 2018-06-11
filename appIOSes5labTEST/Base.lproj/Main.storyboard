@@ -29,7 +29,11 @@
                 <tapGestureRecognizer id="2PO-gv-hm9"/>
                 <tapGestureRecognizer id="lHY-TY-tjP"/>
                 <tapGestureRecognizer id="7Hb-1x-cad"/>
-                <tapGestureRecognizer id="Wg2-a8-rNo"/>
+                <tapGestureRecognizer id="Wg2-a8-rNo">
+                    <connections>
+                        <segue destination="Phh-zw-kfH" kind="show" identifier="showProducts" id="PIR-wM-FSo"/>
+                    </connections>
+                </tapGestureRecognizer>
                 <pinchGestureRecognizer id="8Xx-ri-WMc">
                     <connections>
                         <action selector="pushEasterEgg:" destination="qBc-xg-ONK" id="KdV-QS-sxM"/>
@@ -73,6 +77,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Xc-WB-ERJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1080" y="-1152"/>
+        </scene>
+        <!--Product View Controller-->
+        <scene sceneID="bhy-e3-5jP">
+            <objects>
+                <viewController id="Phh-zw-kfH" customClass="ProductViewController" customModule="appIOSes5labTEST" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tu1-8f-uOW">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tableView>
+                    <connections>
+                        <outlet property="tableView" destination="tu1-8f-uOW" id="zRe-UI-k7H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JyN-Os-GCo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1830" y="-401"/>
         </scene>
     </scenes>
 </document>
