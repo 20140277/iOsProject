@@ -11,7 +11,7 @@ class HelperImages {
     
     
     
-     private var contactSet: [Contact] = [Contact]()
+    
     static func imageFromCategory(category: String) -> UIImage? {
         switch category {
         case "Notebooks":

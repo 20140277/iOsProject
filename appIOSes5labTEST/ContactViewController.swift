@@ -59,7 +59,7 @@ class ContactViewController: UIViewController, UITableViewDataSource, SAPFioriLo
         contactCell.subheadlineText = contact.emailAddress
         
         contactCell.descriptionText = contact.title
-        contactCell.splitPercent = CGFloat(0.5)
+        contactCell.splitPercent = CGFloat(0.75)
         contactCell.activityControl.addActivities(activities)
         contactCell.activityControl.maxVisibleItems = 3
         contactCell.onActivitySelectedHandler = { activityItem in

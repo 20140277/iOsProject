@@ -89,11 +89,56 @@
                     </tableView>
                     <connections>
                         <outlet property="tableView" destination="tu1-8f-uOW" id="zRe-UI-k7H"/>
+                        <segue destination="VXp-Gu-DUn" kind="show" identifier="showProductDetail" id="BnW-Lr-Wyh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JyN-Os-GCo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1830" y="-401"/>
+        </scene>
+        <!--Product Detail View Controller-->
+        <scene sceneID="5j3-Qb-BYZ">
+            <objects>
+                <viewController storyboardIdentifier="ProductDetailViewController" id="VXp-Gu-DUn" customClass="ProductDetailViewController" customModule="appIOSes5labTEST" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QXt-jb-xs4"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Se-fV-M6i"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KbR-bk-TpY">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DwJ-D9-Rzd">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="318"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ja-vw-ty5">
+                                <rect key="frame" x="235" y="326" width="554" height="488"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <connections>
+                        <outlet property="myDetailView" destination="KbR-bk-TpY" id="5k1-I8-SQW"/>
+                        <outlet property="myImageView" destination="6Ja-vw-ty5" id="w1E-85-60o"/>
+                        <outlet property="myTableView" destination="DwJ-D9-Rzd" id="RUI-cE-u1C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Or4-yE-VNC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer cancelsTouchesInView="NO" direction="right" id="eWZ-dT-Abl" userLabel="swipeToPreviousProduct">
+                    <connections>
+                        <action selector="swipeToPreviousProduct:" destination="VXp-Gu-DUn" id="RQO-gS-0Z0"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer cancelsTouchesInView="NO" direction="left" id="p68-CW-gXR" userLabel="swipToNextProduct">
+                    <connections>
+                        <action selector="swipToNextProduct:" destination="VXp-Gu-DUn" id="OZX-7d-i7W"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2636.71875" y="-401.02489019033669"/>
         </scene>
     </scenes>
 </document>

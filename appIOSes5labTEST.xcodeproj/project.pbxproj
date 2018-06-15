@@ -12,6 +12,7 @@
 		035EAB2220C7DEE0008E076E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035EAB2120C7DEE0008E076E /* Utils.swift */; };
 		03801F7820C677D900FDDDC0 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03801F7720C677D900FDDDC0 /* DashboardViewController.swift */; };
 		038B3ABC20CE9D4C00838298 /* HelperImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038B3ABB20CE9D4C00838298 /* HelperImages.swift */; };
+		038CF60220CFB820007BDE35 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038CF60120CFB820007BDE35 /* ProductDetailViewController.swift */; };
 		0C31A01A9C83016A1EF8520C /* BusinessPartner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0103E85A72E34F6FE4BB002 /* BusinessPartner.swift */; };
 		1277F7611F8E66AF0060AF58 /* SAPLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1277F7601F8E66AC0060AF58 /* SAPLogo@2x.png */; };
 		128604DA1E55B41600C698B5 /* SAPCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128604D91E55B41600C698B5 /* SAPCommon.framework */; };
@@ -89,6 +90,7 @@
 		035EAB2120C7DEE0008E076E /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		03801F7720C677D900FDDDC0 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		038B3ABB20CE9D4C00838298 /* HelperImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperImages.swift; sourceTree = "<group>"; };
+		038CF60120CFB820007BDE35 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		072D15932EC915B129B09E7E /* VHAddressType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VHAddressType.swift; path = "Proxy Classes/es5_ios/public/VHAddressType.swift"; sourceTree = "<group>"; };
 		10DFD4966CD29B59A1B74413 /* VHCountry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VHCountry.swift; path = "Proxy Classes/es5_ios/public/VHCountry.swift"; sourceTree = "<group>"; };
 		1277F7601F8E66AC0060AF58 /* SAPLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SAPLogo@2x.png"; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				0334FE1820C93A740099A668 /* ContactViewController.swift */,
 				03801F7720C677D900FDDDC0 /* DashboardViewController.swift */,
 				0312E13D20CE7C9400BA7422 /* ProductViewController.swift */,
+				038CF60120CFB820007BDE35 /* ProductDetailViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				31784CBA4B4F63AAB07D425F /* VHCurrency.swift in Sources */,
 				A47BEA13654F457C2FF895C6 /* VHAddressType.swift in Sources */,
 				D5A1C8E76538FB7E2021E865 /* VHBPRole.swift in Sources */,
+				038CF60220CFB820007BDE35 /* ProductDetailViewController.swift in Sources */,
 				63A9FE981CC45568124ABF1B /* VHLanguage.swift in Sources */,
 				C9A48663A33E7730C45BCD39 /* Contact.swift in Sources */,
 			);

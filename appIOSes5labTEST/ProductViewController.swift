@@ -18,8 +18,9 @@ import Foundation
 
 class ProductViewController: UIViewController, UITableViewDataSource, SAPFioriLoadingIndicator {
     
-    
+  //  var tabTransition:[Int] = [Int]()
     var loadingIndicator: FUILoadingIndicatorView?
+    var indexProductToShow: Int?
     @IBOutlet var tableView: UITableView!
     let objectCellId = "ProductCellID"
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -44,7 +45,12 @@ class ProductViewController: UIViewController, UITableViewDataSource, SAPFioriLo
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.productSet.count // return number of rows of data source
     }
-    
+    /*
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            self.indexProductToShow = indexPath.row
+            self.performSegue(withIdentifier: "showProductDetail", sender: nil)
+        }
+    */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let objectCell = tableView.dequeueReusableCell(withIdentifier: objectCellId,
                                                        for: indexPath as IndexPath) as! FUIObjectTableViewCell
@@ -55,12 +61,14 @@ class ProductViewController: UIViewController, UITableViewDataSource, SAPFioriLo
         objectCell.footnoteText = "\(product.category ?? "")"
         objectCell.descriptionText = "\(product.description ?? "")"
         objectCell.detailImage = HelperImages.imageFromCategory(category: product.category!) // TODO: Replace with your image
-        objectCell.detailImage?.accessibilityIdentifier = "Speed Mouse"
+     //   objectCell.detailImage?.accessibilityIdentifier = ""
         let price: String = "\(product.price!.toString() ) EUR"
         objectCell.statusText = price
         objectCell.accessoryType = .disclosureIndicator
         objectCell.splitPercent = CGFloat(0.3)
-        
+        let tap = UITapGestureRecognizerCustom(target: self, action: #selector(self.handleKpiTap(_:)))
+        objectCell.addGestureRecognizer(tap)
+        tap.index = indexPath.row
         return objectCell
     }
     
@@ -107,5 +115,29 @@ class ProductViewController: UIViewController, UITableViewDataSource, SAPFioriLo
             completionHandler(nil)
         }
     }
+    
+   @objc func handleKpiTap(_ sender:UITapGestureRecognizerCustom) {
+        indexProductToShow = sender.index
+        self.performSegue(withIdentifier: "showProductDetail", sender: nil)
+    }
+  
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showProductDetail" {
+            if let productDetailViewController = segue.destination as? ProductDetailViewController{
+                productDetailViewController.currentIndex = self.indexProductToShow
+                productDetailViewController.setProductSet(products: self.productSet)
+           
+            }
+    
+        }
+    }
+    
 }
+
+
+open class UITapGestureRecognizerCustom : UITapGestureRecognizer {
+    open var index: Int = 0
+}
+
+
 

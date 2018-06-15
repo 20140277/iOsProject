@@ -129,52 +129,57 @@ class DashboardViewController: UITableViewController, SAPFioriLoadingIndicator {
     
     func initExampleData() {
         do {
-            let salesOrderCount = try Utils.fetchEntityCount(entity: GWSAMPLEBASICEntitiesMetadata.EntitySets.salesOrderSet, entities: gwsampleEntites)
-            
-            let kpiView1 = FUIKPIView()
-            let kpiView1Metric = FUIKPIMetricItem(string: "\(salesOrderCount)")
-            kpiView1.items = [kpiView1Metric]
-            kpiView1.captionlabel.text = "Sales Orders"
-            
-            let productCount = try Utils.fetchEntityCount(entity: GWSAMPLEBASICEntitiesMetadata.EntitySets.productSet, entities : gwsampleEntites)
-            let kpiView2 = FUIKPIView()
-            let kpiView2Metric = FUIKPIMetricItem(string: "\(productCount)")
-            kpiView2.items = [kpiView2Metric]
-            kpiView2.captionlabel.text = "Products"
-            let tap2 = UITapGestureRecognizer(target: self, action: #selector(self.handleKpiTap2(_:)))
-            kpiView2.addGestureRecognizer(tap2)
             
             
-            let contactCount = try Utils.fetchEntityCount(entity: GWSAMPLEBASICEntitiesMetadata.EntitySets.contactSet, entities : gwsampleEntites)
-            let kpiView3 = FUIKPIView()
-            let kpiView3Metric = FUIKPIMetricItem(string: "\(contactCount)")
-            kpiView3.items = [kpiView3Metric]
-            kpiView3.captionlabel.text = "Contacts"
+
             
-            let tap3 = UITapGestureRecognizer(target: self, action: #selector(self.handleKpiTap3(_:)))
-            kpiView3.addGestureRecognizer(tap3)
-            
-            
+                let salesOrderCount = try Utils.fetchEntityCount(entity: GWSAMPLEBASICEntitiesMetadata.EntitySets.salesOrderSet, entities: gwsampleEntites)
+                
+                let kpiView1 = FUIKPIView()
+                let kpiView1Metric = FUIKPIMetricItem(string: "\(salesOrderCount)")
+                kpiView1.items = [kpiView1Metric]
+                kpiView1.captionlabel.text = "Sales Orders"
+                
+                let productCount = try Utils.fetchEntityCount(entity: GWSAMPLEBASICEntitiesMetadata.EntitySets.productSet, entities : gwsampleEntites)
+                let kpiView2 = FUIKPIView()
+                let kpiView2Metric = FUIKPIMetricItem(string: "\(productCount)")
+                kpiView2.items = [kpiView2Metric]
+                kpiView2.captionlabel.text = "Products"
+                let tap2 = UITapGestureRecognizer(target: self, action: #selector(self.handleKpiTap2(_:)))
+                kpiView2.addGestureRecognizer(tap2)
+                
+                
+                let contactCount = try Utils.fetchEntityCount(entity: GWSAMPLEBASICEntitiesMetadata.EntitySets.contactSet, entities : gwsampleEntites)
+                let kpiView3 = FUIKPIView()
+                let kpiView3Metric = FUIKPIMetricItem(string: "\(contactCount)")
+                kpiView3.items = [kpiView3Metric]
+                kpiView3.captionlabel.text = "Contacts"
+                
+                let tap3 = UITapGestureRecognizer(target: self, action: #selector(self.handleKpiTap3(_:)))
+                kpiView3.addGestureRecognizer(tap3)
+                
+                
+                
+                let partnersCount = try Utils.fetchEntityCount(entity: GWSAMPLEBASICEntitiesMetadata.EntitySets.businessPartnerSet, entities : gwsampleEntites)
+                let kpiView4 = FUIKPIView()
+                let kpiView4Metric = FUIKPIMetricItem(string: "\(partnersCount)")
+                kpiView4.items = [kpiView4Metric]
+                kpiView4.captionlabel.text = "Partners"
+                
+                
+                kpiHeader = FUIKPIHeader(items: [kpiView1, kpiView2, kpiView3, kpiView4])
+                
+                //let button = UIButton(type: .system) // let preferred over var here
+                // button.frame = CGRect(x:0, y:0, width:self.view.frame.size.width, height:20)
+                //button.backgroundColor = Utils.hexStringToUIColor(hex: "#1b9210")
+                //button.setTitle("Online", for: .normal)
+                //button.setTitleColor(UIColor.white, for: .normal)
+                // kpiHeader.addSubview(button)
+                
+                tableView.tableHeaderView = kpiHeader
+                
            
-            let partnersCount = try Utils.fetchEntityCount(entity: GWSAMPLEBASICEntitiesMetadata.EntitySets.businessPartnerSet, entities : gwsampleEntites)
-            let kpiView4 = FUIKPIView()
-            let kpiView4Metric = FUIKPIMetricItem(string: "\(partnersCount)")
-            kpiView4.items = [kpiView4Metric]
-            kpiView4.captionlabel.text = "Partners"
-          
             
-            kpiHeader = FUIKPIHeader(items: [kpiView1, kpiView2, kpiView3, kpiView4])
-            
-            //let button = UIButton(type: .system) // let preferred over var here
-            // button.frame = CGRect(x:0, y:0, width:self.view.frame.size.width, height:20)
-            //button.backgroundColor = Utils.hexStringToUIColor(hex: "#1b9210")
-            //button.setTitle("Online", for: .normal)
-            //button.setTitleColor(UIColor.white, for: .normal)
-           // kpiHeader.addSubview(button)
-            
-            tableView.tableHeaderView = kpiHeader
-            
-           
             
          
             
