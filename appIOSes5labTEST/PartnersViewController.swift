@@ -1,38 +1,35 @@
 //
-//  ProductViewController.swift
+//  ProductDetailViewController.swift
 //  appIOSes5labTEST
 //
-//  Created by Guillaume Henique on 11/06/2018.
+//  Created by Guillaume Henique on 12/06/2018.
 //  Copyright © 2018 SAP. All rights reserved.
 //
-
-//  SAP Fiori for iOS Mentor
-//  SAP Cloud Platform SDK for iOS Code Example
-//  Object Cell
-//  Copyright © 2018 SAP SE or an SAP affiliate company. All rights reserved.
 
 
 import SAPFiori
 import SAPOData
 import Foundation
+import UIKit
 
-class ProductViewController: UIViewController, UITableViewDataSource, SAPFioriLoadingIndicator {
+
+class PartnersViewController: UIViewController, UITableViewDataSource, SAPFioriLoadingIndicator {
     
-  //  var tabTransition:[Int] = [Int]()
+
     var loadingIndicator: FUILoadingIndicatorView?
-    var indexProductToShow: Int?
+    var indexBusinessPartnerToShow: Int?
     @IBOutlet var tableView: UITableView!
-    let objectCellId = "ProductCellID"
+    let objectCellId = "PartnerCellID"
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private var gwsampleEntites: GWSAMPLEBASICEntities<OnlineODataProvider> {
         return self.appDelegate.gwsamplebasicEntities
     }
-    private var productSet: [Product] = [Product]()
+    private var businessPartnerSet: [BusinessPartner] = [BusinessPartner]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title="Products"
+        self.navigationItem.title="Partners"
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: objectCellId)
@@ -43,30 +40,26 @@ class ProductViewController: UIViewController, UITableViewDataSource, SAPFioriLo
     
     // Table view data source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.productSet.count // return number of rows of data source
+        return self.businessPartnerSet.count // return number of rows of data source
     }
-    /*
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            self.indexProductToShow = indexPath.row
-            self.performSegue(withIdentifier: "showProductDetail", sender: nil)
-        }
-    */
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let objectCell = tableView.dequeueReusableCell(withIdentifier: objectCellId,
                                                        for: indexPath as IndexPath) as! FUIObjectTableViewCell
-        let product = self.productSet[indexPath.row]
-        
-       // objectCell.headlineText = "\(product.entityType ?? "")"
-        objectCell.subheadlineText = "\(product.name ?? "")"
-        objectCell.footnoteText = "\(product.category ?? "")"
-        objectCell.descriptionText = "\(product.description ?? "")"
-        objectCell.detailImage = HelperImages.imageFromCategory(category: product.category!) // TODO: Replace with your image
-     //   objectCell.detailImage?.accessibilityIdentifier = ""
-        let price: String = "\(product.price!.toString() ) EUR"
-        objectCell.statusText = price
+        let businessPartner = self.businessPartnerSet[indexPath.row]
+ 
+       
+        objectCell.subheadlineText = "\(businessPartner.companyName ?? "")"
+        objectCell.footnoteText = "\(businessPartner.webAddress ?? "")"
+        objectCell.descriptionText = "\(businessPartner.address?.city ?? "") - \(businessPartner.address?.country ?? "")"
+     //   objectCell.detailImage =  HelperImages.imageFromCategory(category: businessPartner.category!) // TODO: Replace with your image
+        //   objectCell.detailImage?.accessibilityIdentifier = ""
+      //  let price: String = "\(product.price!.toString() ) EUR"
+        objectCell.statusImage = FUIIconLibrary.system.me.withRenderingMode(.alwaysTemplate)
         objectCell.accessoryType = .disclosureIndicator
-        objectCell.splitPercent = CGFloat(0.3)
-        let tap = UITapGestureRecognizerCustom(target: self, action: #selector(self.handleKpiTap(_:)))
+        objectCell.splitPercent = CGFloat(0.45)
+       let tap = UITapGestureRecognizerCustom(target: self, action: #selector(self.handleKpiTap(_:)))
         objectCell.addGestureRecognizer(tap)
         tap.index = indexPath.row
         return objectCell
@@ -104,36 +97,37 @@ class ProductViewController: UIViewController, UITableViewDataSource, SAPFioriLo
     
     func requestEntities(completionHandler: @escaping (Error?) -> Void) {
         // Only request the first 20 values. If you want to modify the requested entities, you can do it here.
-        let query = DataQuery().selectAll().orderBy(Product.supplierID, SAPOData.SortOrder.ascending).top(20)
-        self.gwsampleEntites.fetchProductSet(matching: query)
-        { products, error in
-            guard let products = products else {
+        let query = DataQuery().selectAll().orderBy(BusinessPartner.businessPartnerID, SAPOData.SortOrder.ascending).top(20)
+        self.gwsampleEntites.fetchBusinessPartnerSet(matching: query)
+        { businessPartners, error in
+            guard let businessPartners = businessPartners else {
                 completionHandler(error!)
                 return
             }
-            self.productSet = products
+            self.businessPartnerSet = businessPartners
             completionHandler(nil)
         }
     }
-    
-   @objc func handleKpiTap(_ sender:UITapGestureRecognizerCustom) {
-        indexProductToShow = sender.index
-        self.performSegue(withIdentifier: "showProductDetail", sender: nil)
-    }
   
+    @objc func handleKpiTap(_ sender:UITapGestureRecognizerCustom) {
+        indexBusinessPartnerToShow = sender.index
+        self.performSegue(withIdentifier: "showContactsOfBusinessPartner", sender: nil)
+    }
+ 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showProductDetail" {
-            if let productDetailViewController = segue.destination as? ProductDetailViewController{
-                productDetailViewController.currentIndex = self.indexProductToShow
-                productDetailViewController.setProductSet(products: self.productSet)
-           
+        if segue.identifier == "showContactsOfBusinessPartner" {
+            if let contactViewController = segue.destination as? ContactViewController{
+                contactViewController.boolContactsfromBusinessPartner = true
+                contactViewController.receivedPartnerID = self.businessPartnerSet [self.indexBusinessPartnerToShow!].businessPartnerID
+                contactViewController.receivedPartnerName = self.businessPartnerSet [self.indexBusinessPartnerToShow!].companyName
+              
+                
             }
-    
+            
         }
     }
     
 }
-
 
 
 

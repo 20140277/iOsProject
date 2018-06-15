@@ -38,3 +38,10 @@ class Utils {
         )
     }
 }
+
+
+
+open class UITapGestureRecognizerCustom : UITapGestureRecognizer {
+    open var index: Int = 0
+}
+

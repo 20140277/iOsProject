@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0312E13E20CE7C9400BA7422 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0312E13D20CE7C9400BA7422 /* ProductViewController.swift */; };
+		032A472920D3A78E00D79A96 /* PartnersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A472820D3A78E00D79A96 /* PartnersViewController.swift */; };
 		0334FE1920C93A740099A668 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334FE1820C93A740099A668 /* ContactViewController.swift */; };
 		035EAB2220C7DEE0008E076E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035EAB2120C7DEE0008E076E /* Utils.swift */; };
 		03801F7820C677D900FDDDC0 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03801F7720C677D900FDDDC0 /* DashboardViewController.swift */; };
@@ -86,6 +87,7 @@
 
 /* Begin PBXFileReference section */
 		0312E13D20CE7C9400BA7422 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		032A472820D3A78E00D79A96 /* PartnersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnersViewController.swift; sourceTree = "<group>"; };
 		0334FE1820C93A740099A668 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		035EAB2120C7DEE0008E076E /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		03801F7720C677D900FDDDC0 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				03801F7720C677D900FDDDC0 /* DashboardViewController.swift */,
 				0312E13D20CE7C9400BA7422 /* ProductViewController.swift */,
 				038CF60120CFB820007BDE35 /* ProductDetailViewController.swift */,
+				032A472820D3A78E00D79A96 /* PartnersViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				4D83A1342FB5C01AE9575140 /* CTAddress.swift in Sources */,
 				ADB888310BF8B6E14080AC1D /* VHUnitLength.swift in Sources */,
 				E8E50680F706F6F3A1C4FAAF /* VHSex.swift in Sources */,
+				032A472920D3A78E00D79A96 /* PartnersViewController.swift in Sources */,
 				918B08A0193F68B66B7EDFD6 /* VHCategory.swift in Sources */,
 				B960BC9A7A179E012F7A0781 /* GWSAMPLEBASICEntitiesMetadata.swift in Sources */,
 				03801F7820C677D900FDDDC0 /* DashboardViewController.swift in Sources */,

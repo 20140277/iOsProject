@@ -16,9 +16,13 @@ class ContactViewController: UIViewController, UITableViewDataSource, SAPFioriLo
     var men: [UIImage] = [#imageLiteral(resourceName: "man1"),#imageLiteral(resourceName: "man2"),#imageLiteral(resourceName: "man3"),#imageLiteral(resourceName: "man4"),#imageLiteral(resourceName: "man5"),#imageLiteral(resourceName: "man6"),#imageLiteral(resourceName: "man7"),#imageLiteral(resourceName: "man8"),#imageLiteral(resourceName: "man9"),#imageLiteral(resourceName: "man10"),#imageLiteral(resourceName: "man11"),#imageLiteral(resourceName: "man12"),#imageLiteral(resourceName: "man13"),#imageLiteral(resourceName: "man14"),#imageLiteral(resourceName: "man16"),#imageLiteral(resourceName: "man17")]
     var women:[UIImage] = [#imageLiteral(resourceName: "woman1"),#imageLiteral(resourceName: "woman2"),#imageLiteral(resourceName: "woman3"),#imageLiteral(resourceName: "woman4"),#imageLiteral(resourceName: "woman6"),#imageLiteral(resourceName: "woman7"),#imageLiteral(resourceName: "woman5"),#imageLiteral(resourceName: "woman8"),#imageLiteral(resourceName: "woman9"),#imageLiteral(resourceName: "woman10"),#imageLiteral(resourceName: "woman11"),#imageLiteral(resourceName: "woman12"),#imageLiteral(resourceName: "woman13"),#imageLiteral(resourceName: "woman14")]
 
+    var boolContactsfromBusinessPartner: Bool = false
     @IBOutlet var tableView: UITableView!
+    var receivedPartnerID: String?
+    var receivedPartnerName: String?
     let activities = [FUIActivityItem.phone, FUIActivityItem.videoCall, FUIActivityItem.message, FUIActivityItem.email,
                       FUIActivityItem.detail]
+    
     
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private var gwsampleEntites: GWSAMPLEBASICEntities<OnlineODataProvider> {
@@ -26,18 +30,26 @@ class ContactViewController: UIViewController, UITableViewDataSource, SAPFioriLo
     }
     var loadingIndicator: FUILoadingIndicatorView?
     private var contactSet: [Contact] = [Contact]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
         
-        self.navigationItem.title="Contacts"
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 76
         tableView.register(FUIContactCell.self, forCellReuseIdentifier: FUIContactCell.reuseIdentifier)
         tableView.dataSource=self
-       
+        
+        if(self.boolContactsfromBusinessPartner == false)
+        {
+            self.navigationItem.title="Contacts "
+        }
+        else{
+            self.navigationItem.title="Contacts - \(receivedPartnerName ?? "")"
+        }
+        
         updateTable()
-            
+               
         
     }
     
@@ -66,7 +78,6 @@ class ContactViewController: UIViewController, UITableViewDataSource, SAPFioriLo
             FUIToastMessage.show(message: "Activity button was clicked",
                                  icon: FUIIconLibrary.system.information,
                                  inView: tableView)
-            
         }
         
         return contactCell
@@ -83,10 +94,12 @@ class ContactViewController: UIViewController, UITableViewDataSource, SAPFioriLo
     }
     
     private func loadData(completionHandler: @escaping () -> Void) {
+        
         self.requestEntities { error in
             defer {
                 completionHandler()
             }
+            
             if let error = error {
                 let alertController = UIAlertController(title: NSLocalizedString("keyErrorLoadingData", value: "Loading data failed!", comment: "XTIT: Title of loading data error pop up."), message: error.localizedDescription, preferredStyle: .alert)
                 
@@ -100,11 +113,24 @@ class ContactViewController: UIViewController, UITableViewDataSource, SAPFioriLo
                 self.tableView.reloadData()
             })
         }
+        
+        
     }
     
     func requestEntities(completionHandler: @escaping (Error?) -> Void) {
-        // Only request the first 20 values. If you want to modify the requested entities, you can do it here.
-        let query = DataQuery().selectAll().top(20)
+        
+       
+        
+            // Only request the first 20 values. If you want to modify the requested entities, you can do it here.
+        
+        
+        var query = DataQuery().selectAll().top(20)
+        
+        if(self.boolContactsfromBusinessPartner == true)
+        {
+            query = DataQuery().selectAll().filter(Contact.businessPartnerID == self.receivedPartnerID!)
+        }
+        
         self.gwsampleEntites.fetchContactSet(matching: query)
         { contacts, error in
             guard let contacts = contacts else {
@@ -114,6 +140,8 @@ class ContactViewController: UIViewController, UITableViewDataSource, SAPFioriLo
             self.contactSet = contacts
             completionHandler(nil)
         }
+        
+        
     }
     
     func imageContact(index: Int) -> UIImage? {
@@ -124,6 +152,11 @@ class ContactViewController: UIViewController, UITableViewDataSource, SAPFioriLo
         else{
             return women[index % 14]
         }
+    }
+    
+    func setContactSet(contacts: [Contact])
+    {
+        self.contactSet = contacts
     }
     
     
