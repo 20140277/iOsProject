@@ -109,16 +109,58 @@
                     <connections>
                         <outlet property="tableView" destination="tu1-8f-uOW" id="zRe-UI-k7H"/>
                         <segue destination="VXp-Gu-DUn" kind="show" identifier="showProductDetail" id="BnW-Lr-Wyh"/>
+                        <segue destination="7y1-dB-D7e" kind="show" identifier="showProductDetails" id="G0s-DH-8Nw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JyN-Os-GCo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1830" y="-401"/>
         </scene>
+        <!--Detail Product View Controller-->
+        <scene sceneID="z8N-iJ-7PY">
+            <objects>
+                <tableViewController storyboardIdentifier="DetailProductViewController" id="7y1-dB-D7e" customClass="DetailProductViewController" customModule="appIOSes5labTEST" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="TsH-0R-9O7">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="jQZ-JF-a9V">
+                            <rect key="frame" x="0.0" y="0.0" width="1024" height="253"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="axO-8s-Ag0">
+                                    <rect key="frame" x="334" y="-3" width="357" height="259"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="357" id="sb4-Q4-gCv"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="axO-8s-Ag0" firstAttribute="top" secondItem="jQZ-JF-a9V" secondAttribute="top" constant="-3" id="8tC-Zq-jhI"/>
+                                <constraint firstAttribute="bottom" secondItem="axO-8s-Ag0" secondAttribute="bottom" constant="-3" id="P8b-eZ-LYr"/>
+                                <constraint firstItem="axO-8s-Ag0" firstAttribute="centerX" secondItem="jQZ-JF-a9V" secondAttribute="centerX" id="YPv-aW-vVr"/>
+                            </constraints>
+                        </view>
+                        <connections>
+                            <outlet property="dataSource" destination="7y1-dB-D7e" id="QYM-sR-AsY"/>
+                            <outlet property="delegate" destination="7y1-dB-D7e" id="NyZ-nb-gqc"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="myDetailView" destination="jQZ-JF-a9V" id="h0g-OA-lZU"/>
+                        <outlet property="myImageView" destination="axO-8s-Ag0" id="aQ3-cJ-3om"/>
+                        <outlet property="myTableView" destination="TsH-0R-9O7" id="KrZ-5D-e2m"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iyi-m2-aAz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1847.4609374999998" y="366.7642752562225"/>
+        </scene>
         <!--Product Detail View Controller-->
         <scene sceneID="5j3-Qb-BYZ">
             <objects>
-                <viewController storyboardIdentifier="ProductDetailViewController" id="VXp-Gu-DUn" customClass="ProductDetailViewController" customModule="appIOSes5labTEST" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductDetailViewController" id="VXp-Gu-DUn" customClass="ProductDetailViewController" customModule="appIOSes5labTEST" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QXt-jb-xs4"/>
                         <viewControllerLayoutGuide type="bottom" id="2Se-fV-M6i"/>
@@ -127,7 +169,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DwJ-D9-Rzd">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DwJ-D9-Rzd">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="318"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -141,8 +183,8 @@
                     </view>
                     <connections>
                         <outlet property="myDetailView" destination="KbR-bk-TpY" id="5k1-I8-SQW"/>
-                        <outlet property="myImageView" destination="6Ja-vw-ty5" id="w1E-85-60o"/>
-                        <outlet property="myTableView" destination="DwJ-D9-Rzd" id="RUI-cE-u1C"/>
+                        <outlet property="myImageView" destination="6Ja-vw-ty5" id="EN4-iU-8j1"/>
+                        <outlet property="myTableView" destination="DwJ-D9-Rzd" id="FE2-sX-zEa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Or4-yE-VNC" userLabel="First Responder" sceneMemberID="firstResponder"/>

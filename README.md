@@ -1,3 +1,3 @@
 
-![Texte alternatif](screenshots/version5.png)
+![Texte alternatif](screenshots/version6.png)
 

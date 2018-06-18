@@ -45,7 +45,7 @@ class HelperImages {
         case "Software":
             return #imageLiteral(resourceName: "software")
         case "Portable Players":
-            return #imageLiteral(resourceName: "Mp3player")
+            return #imageLiteral(resourceName: "playerPortable")
         default:
             return nil
         }

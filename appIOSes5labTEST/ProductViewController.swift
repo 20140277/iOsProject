@@ -118,12 +118,12 @@ class ProductViewController: UIViewController, UITableViewDataSource, SAPFioriLo
     
    @objc func handleKpiTap(_ sender:UITapGestureRecognizerCustom) {
         indexProductToShow = sender.index
-        self.performSegue(withIdentifier: "showProductDetail", sender: nil)
+        self.performSegue(withIdentifier: "showProductDetails", sender: nil)
     }
   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showProductDetail" {
-            if let productDetailViewController = segue.destination as? ProductDetailViewController{
+        if segue.identifier == "showProductDetails" {
+            if let productDetailViewController = segue.destination as? DetailProductViewController{
                 productDetailViewController.currentIndex = self.indexProductToShow
                 productDetailViewController.setProductSet(products: self.productSet)
            
