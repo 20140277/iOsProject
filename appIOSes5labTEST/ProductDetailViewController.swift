@@ -89,6 +89,7 @@ class ProductDetailViewController: UIViewController, SAPFioriLoadingIndicator {
         
         myTableView.rowHeight = UITableViewAutomaticDimension
         self.navigationItem.title = "Product Detail   \(currentIndex! + 1) / \(productSet.count) "
+        
         let product = productSet[currentIndex!]
         
         if let objectHeader = myTableView.tableHeaderView as? FUIObjectHeader{

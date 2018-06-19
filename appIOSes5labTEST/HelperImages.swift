@@ -47,7 +47,7 @@ class HelperImages {
         case "Portable Players":
             return #imageLiteral(resourceName: "playerPortable")
         default:
-            return nil
+            return #imageLiteral(resourceName: "not-available")
         }
     }
         

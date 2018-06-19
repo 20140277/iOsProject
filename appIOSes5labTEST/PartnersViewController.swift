@@ -11,11 +11,13 @@ import SAPFiori
 import SAPOData
 import Foundation
 import UIKit
+import SAPOfflineOData
+import SAPCommon
 
 
 class PartnersViewController: UIViewController, UITableViewDataSource, SAPFioriLoadingIndicator {
     
-
+    private let logger = Logger.shared(named: "PartnersViewControllerLogger")
     var loadingIndicator: FUILoadingIndicatorView?
     var indexBusinessPartnerToShow: Int?
     @IBOutlet var tableView: UITableView!
@@ -24,6 +26,11 @@ class PartnersViewController: UIViewController, UITableViewDataSource, SAPFioriL
     private var gwsampleEntites: GWSAMPLEBASICEntities<OnlineODataProvider> {
         return self.appDelegate.gwsamplebasicEntities
     }
+    private var gwsampleEntitesOffline: GWSAMPLEBASICEntities<OfflineODataProvider> {
+        return self.appDelegate.gwsamplebasicEntitiesOffline
+    }
+    private var isStoreOpened = false
+
     private var businessPartnerSet: [BusinessPartner] = [BusinessPartner]()
     
     override func viewDidLoad() {
@@ -97,6 +104,59 @@ class PartnersViewController: UIViewController, UITableViewDataSource, SAPFioriL
     
     func requestEntities(completionHandler: @escaping (Error?) -> Void) {
         // Only request the first 20 values. If you want to modify the requested entities, you can do it here.
+        gwsampleEntitesOffline.open { error in
+            guard error == nil else {
+                return;
+            }
+            
+            self.isStoreOpened = true
+            
+            self.gwsampleEntitesOffline.download { error in
+                guard error == nil else {
+                    let query = DataQuery().selectAll().orderBy(BusinessPartner.businessPartnerID, SAPOData.SortOrder.ascending).top(20)
+                    self.gwsampleEntitesOffline.fetchBusinessPartnerSet(matching: query) { partners, error in
+                        guard let partners = partners else {
+                            completionHandler(error!)
+                            self.closeOfflineStore()
+                            return
+                        }
+                        self.businessPartnerSet = partners
+                        completionHandler(nil)
+                        self.closeOfflineStore()
+                    }
+                    return
+                }
+                
+                let query = DataQuery().selectAll().orderBy(BusinessPartner.businessPartnerID, SAPOData.SortOrder.ascending).top(20)
+                self.gwsampleEntitesOffline.fetchBusinessPartnerSet(matching: query) { partners, error in
+                    guard let partners = partners else {
+                        completionHandler(error!)
+                        self.closeOfflineStore()
+                        return
+                    }
+                    self.businessPartnerSet = partners
+                    completionHandler(nil)
+                    self.closeOfflineStore()
+                }
+            }
+        }
+    }
+    func closeOfflineStore() {
+        if isStoreOpened {
+            do {
+                try gwsampleEntitesOffline.close()
+                isStoreOpened = false
+            } catch {
+                logger.error("Offline Store closing failed")
+            }
+        }
+        logger.info("Offline Store closed")
+    }
+
+
+/*
+    func requestEntities(completionHandler: @escaping (Error?) -> Void) {
+        // Only request the first 20 values. If you want to modify the requested entities, you can do it here.
         let query = DataQuery().selectAll().orderBy(BusinessPartner.businessPartnerID, SAPOData.SortOrder.ascending).top(20)
         self.gwsampleEntites.fetchBusinessPartnerSet(matching: query)
         { businessPartners, error in
@@ -108,7 +168,7 @@ class PartnersViewController: UIViewController, UITableViewDataSource, SAPFioriL
             completionHandler(nil)
         }
     }
-  
+ */
     @objc func handleKpiTap(_ sender:UITapGestureRecognizerCustom) {
         indexBusinessPartnerToShow = sender.index
         self.performSegue(withIdentifier: "showContactsOfBusinessPartner", sender: nil)

@@ -6,7 +6,9 @@
 
 import SAPFiori
 import SAPOData
+import SAPOfflineOData
 
+import SAPCommon
 
 extension Date {
     
@@ -41,7 +43,7 @@ class DashboardViewController: UITableViewController, SAPFioriLoadingIndicator {
     
     
     var loadingIndicator: FUILoadingIndicatorView?
-    
+    private let logger = Logger.shared(named: "DashboardViewControllerLogger")
     //var loadingIndicator: FUILoadingIndicatorView
     
 
@@ -54,6 +56,10 @@ class DashboardViewController: UITableViewController, SAPFioriLoadingIndicator {
     private var gwsampleEntites: GWSAMPLEBASICEntities<OnlineODataProvider> {
         return self.appDelegate.gwsamplebasicEntities
     }
+    private var gwsampleEntitesOffline: GWSAMPLEBASICEntities<OfflineODataProvider> {
+        return self.appDelegate.gwsamplebasicEntitiesOffline
+    }
+    private var isStoreOpened = false
     var kpiHeader: FUIKPIHeader!
     var delegate: AppDelegate!
     let cellReuseIdentifier = "FUITimelineCell"
@@ -97,7 +103,7 @@ class DashboardViewController: UITableViewController, SAPFioriLoadingIndicator {
         }
     }
     // MARK: - Data accessing
-    
+/*
     func requestEntities(completionHandler: @escaping (Error?) -> Void) {
         // Only request the first 20 values. If you want to modify the requested entities, you can do it here.
         let query = DataQuery().selectAll().orderBy(SalesOrder.createdAt, SAPOData.SortOrder.descending).top(20)
@@ -111,6 +117,59 @@ class DashboardViewController: UITableViewController, SAPFioriLoadingIndicator {
             completionHandler(nil)
         }
     }
+*/
+    func requestEntities(completionHandler: @escaping (Error?) -> Void) {
+        // Only request the first 20 values. If you want to modify the requested entities, you can do it here.
+        gwsampleEntitesOffline.open { error in
+            guard error == nil else {
+                return;
+            }
+            
+            self.isStoreOpened = true
+            
+            self.gwsampleEntitesOffline.download { error in
+                guard error == nil else {
+                    let query = DataQuery().selectAll().orderBy(SalesOrder.createdAt, SAPOData.SortOrder.descending).top(20)
+                    self.gwsampleEntitesOffline.fetchSalesOrderSet(matching: query) { salesOrders, error in
+                        guard let salesOrders = salesOrders else {
+                            completionHandler(error!)
+                            self.closeOfflineStore()
+                            return
+                        }
+                        self.salesOrderSet = salesOrders
+                        completionHandler(nil)
+                        self.closeOfflineStore()
+                    }
+                    return
+                }
+                
+                let query = DataQuery().selectAll().orderBy(SalesOrder.createdAt, SAPOData.SortOrder.descending).top(20)
+                self.gwsampleEntitesOffline.fetchSalesOrderSet(matching: query) { salesOrders, error in
+                    guard let salesOrders = salesOrders else {
+                        completionHandler(error!)
+                        self.closeOfflineStore()
+                        return
+                    }
+                    self.salesOrderSet = salesOrders
+                    completionHandler(nil)
+                    self.closeOfflineStore()
+                }
+            }
+        }
+    }
+    
+    func closeOfflineStore() {
+        if isStoreOpened {
+            do {
+                try gwsampleEntitesOffline.close()
+                isStoreOpened = false
+            } catch {
+                logger.error("Offline Store closing failed")
+            }
+        }
+        logger.info("Offline Store closed")
+    }
+
     
    
     @objc func handleKpiTap2(_ sender: UITapGestureRecognizer) {

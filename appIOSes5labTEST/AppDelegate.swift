@@ -11,6 +11,7 @@ import SAPFioriFlows
 import SAPFoundation
 import SAPOData
 import UserNotifications
+import SAPOfflineOData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate, OnboardingManagerDelegate, UNUserNotificationCenterDelegate {
@@ -18,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     private let logger = Logger.shared(named: "AppDelegateLogger")
     var gwsamplebasicEntities: GWSAMPLEBASICEntities<OnlineODataProvider>!
+    var gwsamplebasicEntitiesOffline: GWSAMPLEBASICEntities<OfflineODataProvider>!
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Set a FUIInfoViewController as the rootViewController, since there it is none set in the Main.storyboard
@@ -160,5 +162,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         self.gwsamplebasicEntities = GWSAMPLEBASICEntities(provider: odataProvider)
         // To update entity force to use X-HTTP-Method header
         self.gwsamplebasicEntities.provider.networkOptions.tunneledMethods.append("MERGE")
+        
+        var offlineParameters = OfflineODataParameters()
+        offlineParameters.enableRepeatableRequests = true
+        
+        // create offline OData provider
+        let offlineODataProvider = try! OfflineODataProvider(
+            serviceRoot: URL(string: serviceRoot.absoluteString)!,
+            parameters: offlineParameters,
+            sapURLSession: urlSession
+        )
+        
+        // define offline defining query
+        try! offlineODataProvider.add(
+            definingQuery: OfflineODataDefiningQuery(
+                name: CollectionType.productSet.rawValue,
+                query: "/\(CollectionType.productSet.rawValue)",
+                automaticallyRetrievesStreams: false
+            )
+        )
+        try! offlineODataProvider.add(
+            definingQuery: OfflineODataDefiningQuery(
+                name: CollectionType.businessPartnerSet.rawValue,
+                query: "/\(CollectionType.businessPartnerSet.rawValue)",
+                automaticallyRetrievesStreams: false
+            )
+        )
+        try! offlineODataProvider.add(
+            definingQuery: OfflineODataDefiningQuery(
+                name: CollectionType.contactSet.rawValue,
+                query: "/\(CollectionType.contactSet.rawValue)",
+                automaticallyRetrievesStreams: false
+            )
+        )
+        try! offlineODataProvider.add(
+            definingQuery: OfflineODataDefiningQuery(
+                name: CollectionType.salesOrderSet.rawValue,
+                query: "/\(CollectionType.salesOrderSet.rawValue)",
+                automaticallyRetrievesStreams: false
+            )
+        )
+        
+        gwsamplebasicEntitiesOffline = GWSAMPLEBASICEntities(provider: offlineODataProvider)
+
     }
 }

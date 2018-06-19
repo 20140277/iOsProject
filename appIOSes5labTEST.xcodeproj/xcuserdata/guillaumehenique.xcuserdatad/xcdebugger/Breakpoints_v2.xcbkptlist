@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appIOSes5labTEST/DashboardViewController.swift"
-            timestampString = "550764803.123674"
+            timestampString = "551109900.2070889"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "DashboardViewController"
             landmarkType = "3">
             <Locations>
@@ -133,11 +133,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appIOSes5labTEST/DashboardViewController.swift"
-            timestampString = "550764803.123732"
+            timestampString = "551109900.2074209"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "DashboardViewController"
             landmarkType = "3">
             <Locations>
@@ -226,7 +226,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appIOSes5labTEST/ProductViewController.swift"
-            timestampString = "551004041.568338"
+            timestampString = "551109900.2076401"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "6"
@@ -258,7 +258,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appIOSes5labTEST/ProductDetailViewController.swift"
-            timestampString = "551000657.757875"
+            timestampString = "551109900.2077399"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
@@ -274,13 +274,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appIOSes5labTEST/ProductDetailViewController.swift"
-            timestampString = "551000657.758395"
+            timestampString = "551109900.207786"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
             endingLineNumber = "54"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "appIOSes5labTEST/ProductViewController.swift"
+            timestampString = "551109900.207828"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
+            landmarkName = "ProductViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -9,6 +9,8 @@
 import SAPFiori
 import SAPOData
 import Foundation
+import SAPCommon
+import SAPOfflineOData
 
 class ContactViewController: UIViewController, UITableViewDataSource, SAPFioriLoadingIndicator {
     
@@ -16,7 +18,9 @@ class ContactViewController: UIViewController, UITableViewDataSource, SAPFioriLo
     var men: [UIImage] = [#imageLiteral(resourceName: "man1"),#imageLiteral(resourceName: "man2"),#imageLiteral(resourceName: "man3"),#imageLiteral(resourceName: "man4"),#imageLiteral(resourceName: "man5"),#imageLiteral(resourceName: "man6"),#imageLiteral(resourceName: "man7"),#imageLiteral(resourceName: "man8"),#imageLiteral(resourceName: "man9"),#imageLiteral(resourceName: "man10"),#imageLiteral(resourceName: "man11"),#imageLiteral(resourceName: "man12"),#imageLiteral(resourceName: "man13"),#imageLiteral(resourceName: "man14"),#imageLiteral(resourceName: "man16"),#imageLiteral(resourceName: "man17")]
     var women:[UIImage] = [#imageLiteral(resourceName: "woman1"),#imageLiteral(resourceName: "woman2"),#imageLiteral(resourceName: "woman3"),#imageLiteral(resourceName: "woman4"),#imageLiteral(resourceName: "woman6"),#imageLiteral(resourceName: "woman7"),#imageLiteral(resourceName: "woman5"),#imageLiteral(resourceName: "woman8"),#imageLiteral(resourceName: "woman9"),#imageLiteral(resourceName: "woman10"),#imageLiteral(resourceName: "woman11"),#imageLiteral(resourceName: "woman12"),#imageLiteral(resourceName: "woman13"),#imageLiteral(resourceName: "woman14")]
 
-    var boolContactsfromBusinessPartner: Bool = false
+    
+    private let logger = Logger.shared(named: "ContactViewControllerLogger")
+    var boolContactsfromBusinessPartner: Bool = false // to determine if the segue comes from PartnerViewController (by default set to false)
     @IBOutlet var tableView: UITableView!
     var receivedPartnerID: String?
     var receivedPartnerName: String?
@@ -28,6 +32,11 @@ class ContactViewController: UIViewController, UITableViewDataSource, SAPFioriLo
     private var gwsampleEntites: GWSAMPLEBASICEntities<OnlineODataProvider> {
         return self.appDelegate.gwsamplebasicEntities
     }
+    private var gwsampleEntitesOffline: GWSAMPLEBASICEntities<OfflineODataProvider> {
+        return self.appDelegate.gwsamplebasicEntitiesOffline
+    }
+    private var isStoreOpened = false
+
     var loadingIndicator: FUILoadingIndicatorView?
     private var contactSet: [Contact] = [Contact]()
     
@@ -118,6 +127,69 @@ class ContactViewController: UIViewController, UITableViewDataSource, SAPFioriLo
     }
     
     func requestEntities(completionHandler: @escaping (Error?) -> Void) {
+        // Only request the first 20 values. If you want to modify the requested entities, you can do it here.
+        gwsampleEntitesOffline.open { error in
+            guard error == nil else {
+                return;
+            }
+            
+            self.isStoreOpened = true
+            
+            self.gwsampleEntitesOffline.download { error in
+                guard error == nil else {
+                    var query = DataQuery().selectAll().top(20)
+                    
+                    if(self.boolContactsfromBusinessPartner == true)
+                    {
+                        query = DataQuery().selectAll().filter(Contact.businessPartnerID == self.receivedPartnerID!)
+                    }
+                    self.gwsampleEntitesOffline.fetchContactSet(matching: query) { contacts, error in
+                        guard let contacts = contacts else {
+                            completionHandler(error!)
+                            self.closeOfflineStore()
+                            return
+                        }
+                        self.contactSet = contacts
+                        completionHandler(nil)
+                        self.closeOfflineStore()
+                    }
+                    return
+                }
+                
+                var query = DataQuery().selectAll().top(20)
+                
+                if(self.boolContactsfromBusinessPartner == true)
+                {
+                    query = DataQuery().selectAll().filter(Contact.businessPartnerID == self.receivedPartnerID!)
+                }
+                self.gwsampleEntitesOffline.fetchContactSet(matching: query) { contacts, error in
+                    guard let contacts = contacts else {
+                        completionHandler(error!)
+                        self.closeOfflineStore()
+                        return
+                    }
+                    self.contactSet = contacts
+                    completionHandler(nil)
+                    self.closeOfflineStore()
+                }
+            }
+        }
+    }
+    
+    func closeOfflineStore() {
+        if isStoreOpened {
+            do {
+                try gwsampleEntitesOffline.close()
+                isStoreOpened = false
+            } catch {
+                logger.error("Offline Store closing failed")
+            }
+        }
+        logger.info("Offline Store closed")
+    }
+    
+   /*
+    func requestEntities(completionHandler: @escaping (Error?) -> Void) {
         
        
         
@@ -143,7 +215,7 @@ class ContactViewController: UIViewController, UITableViewDataSource, SAPFioriLo
         
         
     }
-    
+ */
     func imageContact(index: Int) -> UIImage? {
         if(self.contactSet[index].sex == "M")
         {
