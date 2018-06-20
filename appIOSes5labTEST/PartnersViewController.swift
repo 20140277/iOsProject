@@ -128,7 +128,7 @@ class PartnersViewController: UIViewController, UITableViewDataSource, SAPFioriL
                 }
                 
                 let query = DataQuery().selectAll().orderBy(BusinessPartner.businessPartnerID, SAPOData.SortOrder.ascending).top(20)
-                self.gwsampleEntitesOffline.fetchBusinessPartnerSet(matching: query) { partners, error in
+                self.gwsampleEntites.fetchBusinessPartnerSet(matching: query) { partners, error in
                     guard let partners = partners else {
                         completionHandler(error!)
                         self.closeOfflineStore()

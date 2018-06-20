@@ -162,7 +162,7 @@ class ContactViewController: UIViewController, UITableViewDataSource, SAPFioriLo
                 {
                     query = DataQuery().selectAll().filter(Contact.businessPartnerID == self.receivedPartnerID!)
                 }
-                self.gwsampleEntitesOffline.fetchContactSet(matching: query) { contacts, error in
+                self.gwsampleEntites.fetchContactSet(matching: query) { contacts, error in
                     guard let contacts = contacts else {
                         completionHandler(error!)
                         self.closeOfflineStore()

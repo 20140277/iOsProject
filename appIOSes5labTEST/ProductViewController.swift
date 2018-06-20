@@ -140,7 +140,7 @@ class ProductViewController: UIViewController, UITableViewDataSource, SAPFioriLo
                 }
                 
                 let query = DataQuery().selectAll().orderBy(Product.supplierID, SAPOData.SortOrder.ascending).top(20)
-                self.gwsampleEntitesOffline.fetchProductSet(matching: query) { products, error in
+                self.gwsampleEntites.fetchProductSet(matching: query) { products, error in
                     guard let products = products else {
                         completionHandler(error!)
                         self.closeOfflineStore()

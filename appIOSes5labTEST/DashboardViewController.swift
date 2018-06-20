@@ -144,7 +144,7 @@ class DashboardViewController: UITableViewController, SAPFioriLoadingIndicator {
                 }
                 
                 let query = DataQuery().selectAll().orderBy(SalesOrder.createdAt, SAPOData.SortOrder.descending).top(20)
-                self.gwsampleEntitesOffline.fetchSalesOrderSet(matching: query) { salesOrders, error in
+                self.gwsampleEntites.fetchSalesOrderSet(matching: query) { salesOrders, error in
                     guard let salesOrders = salesOrders else {
                         completionHandler(error!)
                         self.closeOfflineStore()
