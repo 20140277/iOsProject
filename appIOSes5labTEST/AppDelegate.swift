@@ -177,7 +177,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         try! offlineODataProvider.add(
             definingQuery: OfflineODataDefiningQuery(
                 name: CollectionType.productSet.rawValue,
-                query: "/\(CollectionType.productSet.rawValue)",
+                query: "/\(CollectionType.productSet.rawValue)?$top=20",
                 automaticallyRetrievesStreams: false
             )
         )
