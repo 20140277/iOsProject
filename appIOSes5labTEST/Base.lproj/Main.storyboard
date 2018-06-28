@@ -27,7 +27,7 @@
             </objects>
             <point key="canvasLocation" x="1830" y="-2067"/>
         </scene>
-        <!--Simple ERP-->
+        <!--SAP Cisco-->
         <scene sceneID="x8X-T9-oIJ">
             <objects>
                 <viewController storyboardIdentifier="DashboardViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qBc-xg-ONK" customClass="DashboardViewController" customModule="appIOSes5labTEST" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,7 +37,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Simple ERP" id="WNK-6W-eXH"/>
+                    <navigationItem key="navigationItem" title="SAP Cisco" id="WNK-6W-eXH"/>
                     <connections>
                         <outlet property="myTableView" destination="gxz-H1-tnX" id="uWw-6X-kPu"/>
                         <segue destination="Erk-k9-H3C" kind="show" identifier="showContacts" id="6iD-w5-GG9"/>
@@ -203,6 +203,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ED7-Yk-fRU"/>
+        <segue reference="6iD-w5-GG9"/>
     </inferredMetricsTieBreakers>
 </document>

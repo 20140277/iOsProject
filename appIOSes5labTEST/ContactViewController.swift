@@ -11,12 +11,13 @@ import SAPOData
 import Foundation
 import SAPCommon
 import SAPOfflineOData
+import UIKit
 
-class ContactViewController: UIViewController, UITableViewDataSource, SAPFioriLoadingIndicator {
+class ContactViewController: UIViewController, UITableViewDataSource, SAPFioriLoadingIndicator, WXTeamsCallingDelegate {
     
     // Fake pictures for contacts
-    var men: [UIImage] = [#imageLiteral(resourceName: "man1"),#imageLiteral(resourceName: "man2"),#imageLiteral(resourceName: "man3"),#imageLiteral(resourceName: "man4"),#imageLiteral(resourceName: "man5"),#imageLiteral(resourceName: "man6"),#imageLiteral(resourceName: "man7"),#imageLiteral(resourceName: "man8"),#imageLiteral(resourceName: "man9"),#imageLiteral(resourceName: "man10"),#imageLiteral(resourceName: "man11"),#imageLiteral(resourceName: "man12"),#imageLiteral(resourceName: "man13"),#imageLiteral(resourceName: "man14"),#imageLiteral(resourceName: "man16"),#imageLiteral(resourceName: "man17")]
-    var women:[UIImage] = [#imageLiteral(resourceName: "woman1"),#imageLiteral(resourceName: "woman2"),#imageLiteral(resourceName: "woman3"),#imageLiteral(resourceName: "woman4"),#imageLiteral(resourceName: "woman6"),#imageLiteral(resourceName: "woman7"),#imageLiteral(resourceName: "woman5"),#imageLiteral(resourceName: "woman8"),#imageLiteral(resourceName: "woman9"),#imageLiteral(resourceName: "woman10"),#imageLiteral(resourceName: "woman11"),#imageLiteral(resourceName: "woman12"),#imageLiteral(resourceName: "woman13"),#imageLiteral(resourceName: "woman14")]
+    // var men: [UIImage] = [#imageLiteral(resourceName: "man1"),#imageLiteral(resourceName: "man2"),#imageLiteral(resourceName: "man3"),#imageLiteral(resourceName: "man4"),#imageLiteral(resourceName: "man5"),#imageLiteral(resourceName: "man6"),#imageLiteral(resourceName: "man7"),#imageLiteral(resourceName: "man8"),#imageLiteral(resourceName: "man9"),#imageLiteral(resourceName: "man10"),#imageLiteral(resourceName: "man11"),#imageLiteral(resourceName: "man12"),#imageLiteral(resourceName: "man13"),#imageLiteral(resourceName: "man14"),#imageLiteral(resourceName: "man16"),#imageLiteral(resourceName: "man17")]
+    // var women:[UIImage] = [#imageLiteral(resourceName: "woman1"),#imageLiteral(resourceName: "woman2"),#imageLiteral(resourceName: "woman3"),#imageLiteral(resourceName: "woman4"),#imageLiteral(resourceName: "woman6"),#imageLiteral(resourceName: "woman7"),#imageLiteral(resourceName: "woman5"),#imageLiteral(resourceName: "woman8"),#imageLiteral(resourceName: "woman9"),#imageLiteral(resourceName: "woman10"),#imageLiteral(resourceName: "woman11"),#imageLiteral(resourceName: "woman12"),#imageLiteral(resourceName: "woman13"),#imageLiteral(resourceName: "woman14")]
 
     
     private let logger = Logger.shared(named: "ContactViewControllerLogger")
@@ -27,6 +28,12 @@ class ContactViewController: UIViewController, UITableViewDataSource, SAPFioriLo
     let activities = [FUIActivityItem.phone, FUIActivityItem.videoCall, FUIActivityItem.message, FUIActivityItem.email,
                       FUIActivityItem.detail]
     
+    // Cisco part
+ 
+    var email: String! = "guillaume.henique@sap.com"
+    var apiKey = "ZDc2NzhlYjAtMGVmNy00NzBjLTkzODEtZTQ2YzA4ZGU2OTJjMGQzNWQ3MzEtMDNi"
+    
+    // end Cisco part
     
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private var gwsampleEntites: GWSAMPLEBASICEntities<OnlineODataProvider> {
@@ -59,10 +66,14 @@ class ContactViewController: UIViewController, UITableViewDataSource, SAPFioriLo
         
         updateTable()
                
-        
+        self.initiateCisco()
     }
     
-    
+    func initiateCisco() {
+        let settingsButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showActionSheet(_:)))
+        
+        self.navigationItem.rightBarButtonItems = [settingsButton];
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.contactSet.count// return number of rows of data source
@@ -75,18 +86,19 @@ class ContactViewController: UIViewController, UITableViewDataSource, SAPFioriLo
         
         let contact = self.contactSet[indexPath.row]
         
-        contactCell.detailImage = imageContact(index: indexPath.row) // TODO: Replace with your Image
+        // contactCell.detailImage = imageContact(index: indexPath.row) // TODO: Replace with your Image
         contactCell.headlineText = "\(contact.firstName ?? "") \(contact.lastName ?? "")"
         contactCell.subheadlineText = contact.emailAddress
         
         contactCell.descriptionText = contact.title
         contactCell.splitPercent = CGFloat(0.75)
         contactCell.activityControl.addActivities(activities)
-        contactCell.activityControl.maxVisibleItems = 3
+        contactCell.activityControl.maxVisibleItems = 1
         contactCell.onActivitySelectedHandler = { activityItem in
-            FUIToastMessage.show(message: "Activity button was clicked",
+            /* FUIToastMessage.show(message: "Activity button was clicked",
                                  icon: FUIIconLibrary.system.information,
-                                 inView: tableView)
+                                 inView: tableView) */
+            self.callSupport()
         }
         
         return contactCell
@@ -216,7 +228,7 @@ class ContactViewController: UIViewController, UITableViewDataSource, SAPFioriLo
         
     }
  */
-    func imageContact(index: Int) -> UIImage? {
+    /* func imageContact(index: Int) -> UIImage? {
         if(self.contactSet[index].sex == "M")
         {
             return men[index % 16]
@@ -224,12 +236,85 @@ class ContactViewController: UIViewController, UITableViewDataSource, SAPFioriLo
         else{
             return women[index % 14]
         }
-    }
+    }*/
     
     func setContactSet(contacts: [Contact])
     {
         self.contactSet = contacts
     }
     
+    // Cisco functions
     
+    @objc func showActionSheet(_ sender:UIBarButtonItem) {
+        let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let callURIAction = UIAlertAction(title: "Modifier le contact", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            let alert = UIAlertController(title: "Paramètres", message: "URI du contact", preferredStyle: .alert)
+            
+            alert.addTextField { (textField) in
+                textField.placeholder = "Entrez l'URI"
+                textField.text = self.email
+                textField.textAlignment = .center
+                textField.clearButtonMode = .whileEditing
+            }
+            
+            alert.addAction(UIAlertAction(title: "Annuler", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Valider", style: .default, handler: { [weak alert] (_) in
+                let uri = (alert?.textFields![0].text)!
+                if (uri != "") {
+                    self.email = uri
+                }
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+        })
+        
+        
+        let callAction = UIAlertAction(title: "Appeler le support", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            let alert = UIAlertController(title: "Appel Support", message: "Vous êtes sur le point d'appeler le support, êtes-vous sûr de vouloir continuer ?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Non", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Oui", style: .default, handler: self.callSupport))
+            self.present(alert, animated: true, completion: nil)
+        })
+        
+        let cancelAction = UIAlertAction(title: "Annuler", style: .cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+        })
+        
+        optionMenu.addAction(callURIAction)
+        optionMenu.addAction(callAction)
+        optionMenu.addAction(cancelAction)
+        
+        if let popoverController = optionMenu.popoverPresentationController {
+            popoverController.barButtonItem = sender
+        }
+        
+        self.present(optionMenu, animated: true, completion: nil)
+    }
+    
+    func callSupport(alert: UIAlertAction!) {
+        self.callSupport()
+    }
+    
+    func callSupport() {
+        let wxt = WXTKit(apiKey: self.apiKey, authType: .wxtId)
+        wxt.activate(authenticationStatus: { (authenticated) in
+            if authenticated {
+                wxt.videoCall(navigationController: self.navigationController!,
+                              recipient: self.email, delegate: self as WXTeamsCallingDelegate)
+            }
+        })
+    }
+    
+    func callDidComplete() {
+        
+    }
+    
+    func callFailed(withError: String) {
+        
+    }
+    
+    // end Cisco functions
 }

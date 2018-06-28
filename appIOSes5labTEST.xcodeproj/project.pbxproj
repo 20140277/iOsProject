@@ -32,6 +32,13 @@
 		45C8B57D8CD09922AD8737FF /* GWSAMPLEBASICEntitiesMetadataText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CD07CC2F1DDEC9ED85A11 /* GWSAMPLEBASICEntitiesMetadataText.swift */; };
 		4D83A1342FB5C01AE9575140 /* CTAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAE272DD9CFF4017EDB27FF /* CTAddress.swift */; };
 		63A9FE981CC45568124ABF1B /* VHLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CE268D1C6764DDDAFFE2CC /* VHLanguage.swift */; };
+		6E0750E520E503340054D531 /* ALLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0750DE20E503340054D531 /* ALLoadingView.swift */; };
+		6E0750E620E503340054D531 /* WXTeamsCallingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E0750DF20E503340054D531 /* WXTeamsCallingViewController.xib */; };
+		6E0750E720E503340054D531 /* WXTeamsCallingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0750E020E503340054D531 /* WXTeamsCallingViewController.swift */; };
+		6E0750E820E503340054D531 /* WXTKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0750E120E503340054D531 /* WXTKit.swift */; };
+		6E0750E920E503340054D531 /* WXTeamsDirectMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0750E220E503340054D531 /* WXTeamsDirectMessageViewController.swift */; };
+		6E0750EA20E503340054D531 /* WXTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0750E320E503340054D531 /* WXTManager.swift */; };
+		6E0750EB20E503340054D531 /* WXSimpleTokenAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0750E420E503340054D531 /* WXSimpleTokenAuthenticator.swift */; };
 		75218F33DD88B4E9F60E5782 /* VHUnitQuantity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3FC2D6F137923064585C0 /* VHUnitQuantity.swift */; };
 		755533981F25FD330017A1BC /* SAPOfflineOData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 755533971F25FD2A0017A1BC /* SAPOfflineOData.framework */; };
 		755533991F25FD330017A1BC /* SAPOfflineOData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 755533971F25FD2A0017A1BC /* SAPOfflineOData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -60,6 +67,7 @@
 		C77A7AE39EB0F735BB2641BB /* GWSAMPLEBASICEntitiesStaticResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398CEFF07E7F1273302A3877 /* GWSAMPLEBASICEntitiesStaticResolver.swift */; };
 		C9A48663A33E7730C45BCD39 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C4520519C64661D3CAE104 /* Contact.swift */; };
 		CBCA7A991E3778A9001AF49E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBCA7A9B1E3778A9001AF49E /* Main.storyboard */; };
+		CD35399DB555C73294A09B5A /* Pods_appIOSes5labTEST.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704FB3CC6E8ED0B2902A8CB2 /* Pods_appIOSes5labTEST.framework */; };
 		CE9275C9E074CA2C2BCABE54 /* VHUnitWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BFB4657753A1A7B5A06BC1 /* VHUnitWeight.swift */; };
 		D5A1C8E76538FB7E2021E865 /* VHBPRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9329091ACA2295CFC28CD /* VHBPRole.swift */; };
 		E3768B05FAD71BE0F693BBA3 /* GWSAMPLEBASICEntitiesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E9BB6B7CAF292FA2BEB322 /* GWSAMPLEBASICEntitiesFactory.swift */; };
@@ -114,6 +122,14 @@
 		398CEFF07E7F1273302A3877 /* GWSAMPLEBASICEntitiesStaticResolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GWSAMPLEBASICEntitiesStaticResolver.swift; path = "Proxy Classes/es5_ios/internal/GWSAMPLEBASICEntitiesStaticResolver.swift"; sourceTree = "<group>"; };
 		547EC2A69A909606F8DDF74C /* GWSAMPLEBASICEntities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GWSAMPLEBASICEntities.swift; path = "Proxy Classes/es5_ios/public/GWSAMPLEBASICEntities.swift"; sourceTree = "<group>"; };
 		64453B23C5091CD8FB368CDF /* VHProductTypeCode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VHProductTypeCode.swift; path = "Proxy Classes/es5_ios/public/VHProductTypeCode.swift"; sourceTree = "<group>"; };
+		6E0750DE20E503340054D531 /* ALLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ALLoadingView.swift; path = "../../../../../../../Downloads/WXTKitDemo-master/DrAnywhere/WXT/ALLoadingView.swift"; sourceTree = "<group>"; };
+		6E0750DF20E503340054D531 /* WXTeamsCallingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WXTeamsCallingViewController.xib; path = "../../../../../../../Downloads/WXTKitDemo-master/DrAnywhere/WXT/WXTeamsCallingViewController.xib"; sourceTree = "<group>"; };
+		6E0750E020E503340054D531 /* WXTeamsCallingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WXTeamsCallingViewController.swift; path = "../../../../../../../Downloads/WXTKitDemo-master/DrAnywhere/WXT/WXTeamsCallingViewController.swift"; sourceTree = "<group>"; };
+		6E0750E120E503340054D531 /* WXTKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WXTKit.swift; path = "../../../../../../../Downloads/WXTKitDemo-master/DrAnywhere/WXT/WXTKit.swift"; sourceTree = "<group>"; };
+		6E0750E220E503340054D531 /* WXTeamsDirectMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WXTeamsDirectMessageViewController.swift; path = "../../../../../../../Downloads/WXTKitDemo-master/DrAnywhere/WXT/WXTeamsDirectMessageViewController.swift"; sourceTree = "<group>"; };
+		6E0750E320E503340054D531 /* WXTManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WXTManager.swift; path = "../../../../../../../Downloads/WXTKitDemo-master/DrAnywhere/WXT/WXTManager.swift"; sourceTree = "<group>"; };
+		6E0750E420E503340054D531 /* WXSimpleTokenAuthenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WXSimpleTokenAuthenticator.swift; path = "../../../../../../../Downloads/WXTKitDemo-master/DrAnywhere/WXT/WXSimpleTokenAuthenticator.swift"; sourceTree = "<group>"; };
+		704FB3CC6E8ED0B2902A8CB2 /* Pods_appIOSes5labTEST.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_appIOSes5labTEST.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		755533971F25FD2A0017A1BC /* SAPOfflineOData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPOfflineOData.framework; sourceTree = "<group>"; };
 		7561921A1DBE1A90007F562C /* SAPOData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPOData.framework; sourceTree = "<group>"; };
 		7569DA511E5C716A00C5D751 /* SAPFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPFoundation.framework; sourceTree = "<group>"; };
@@ -130,10 +146,12 @@
 		7EA5DEF449F71BC4873B715F /* VHCategory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VHCategory.swift; path = "Proxy Classes/es5_ios/public/VHCategory.swift"; sourceTree = "<group>"; };
 		8B0447A09B27B4F216284B05 /* GWSAMPLEBASICEntitiesMetadataChanges.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GWSAMPLEBASICEntitiesMetadataChanges.swift; path = "Proxy Classes/es5_ios/internal/GWSAMPLEBASICEntitiesMetadataChanges.swift"; sourceTree = "<group>"; };
 		8B6D3FA1AFAF49DD64C6B4B5 /* VHUnitLength.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VHUnitLength.swift; path = "Proxy Classes/es5_ios/public/VHUnitLength.swift"; sourceTree = "<group>"; };
+		9347FCFABB8086BEB3BDC576 /* Pods-appIOSes5labTEST.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appIOSes5labTEST.release.xcconfig"; path = "Pods/Target Support Files/Pods-appIOSes5labTEST/Pods-appIOSes5labTEST.release.xcconfig"; sourceTree = "<group>"; };
 		966CD07CC2F1DDEC9ED85A11 /* GWSAMPLEBASICEntitiesMetadataText.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GWSAMPLEBASICEntitiesMetadataText.swift; path = "Proxy Classes/es5_ios/internal/GWSAMPLEBASICEntitiesMetadataText.swift"; sourceTree = "<group>"; };
 		96C2CA549320613632EB6862 /* SalesOrder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SalesOrder.swift; path = "Proxy Classes/es5_ios/public/SalesOrder.swift"; sourceTree = "<group>"; };
 		A6C4520519C64661D3CAE104 /* Contact.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Contact.swift; path = "Proxy Classes/es5_ios/public/Contact.swift"; sourceTree = "<group>"; };
 		B0103E85A72E34F6FE4BB002 /* BusinessPartner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BusinessPartner.swift; path = "Proxy Classes/es5_ios/public/BusinessPartner.swift"; sourceTree = "<group>"; };
+		B8B644EFB6A0DAFDCA8B07D7 /* Pods-appIOSes5labTEST.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appIOSes5labTEST.debug.xcconfig"; path = "Pods/Target Support Files/Pods-appIOSes5labTEST/Pods-appIOSes5labTEST.debug.xcconfig"; sourceTree = "<group>"; };
 		BDF3FC2D6F137923064585C0 /* VHUnitQuantity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VHUnitQuantity.swift; path = "Proxy Classes/es5_ios/public/VHUnitQuantity.swift"; sourceTree = "<group>"; };
 		CB909D801E38CA8800218154 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CDB9329091ACA2295CFC28CD /* VHBPRole.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VHBPRole.swift; path = "Proxy Classes/es5_ios/public/VHBPRole.swift"; sourceTree = "<group>"; };
@@ -153,6 +171,7 @@
 				755533981F25FD330017A1BC /* SAPOfflineOData.framework in Frameworks */,
 				128604DA1E55B41600C698B5 /* SAPCommon.framework in Frameworks */,
 				759BA2701E6821A7001C32BA /* SAPFiori.framework in Frameworks */,
+				CD35399DB555C73294A09B5A /* Pods_appIOSes5labTEST.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +196,20 @@
 				398CEFF07E7F1273302A3877 /* GWSAMPLEBASICEntitiesStaticResolver.swift */,
 			);
 			name = internal;
+			sourceTree = "<group>";
+		};
+		6E0750DD20E503200054D531 /* WXT */ = {
+			isa = PBXGroup;
+			children = (
+				6E0750DE20E503340054D531 /* ALLoadingView.swift */,
+				6E0750E420E503340054D531 /* WXSimpleTokenAuthenticator.swift */,
+				6E0750E020E503340054D531 /* WXTeamsCallingViewController.swift */,
+				6E0750DF20E503340054D531 /* WXTeamsCallingViewController.xib */,
+				6E0750E220E503340054D531 /* WXTeamsDirectMessageViewController.swift */,
+				6E0750E120E503340054D531 /* WXTKit.swift */,
+				6E0750E320E503340054D531 /* WXTManager.swift */,
+			);
+			name = WXT;
 			sourceTree = "<group>";
 		};
 		7532C1BB1D5B6917004B03AF /* Model */ = {
@@ -229,6 +262,7 @@
 				7A1315B71D4B982000A5DA56 /* appIOSes5labTEST */,
 				7A1315B61D4B982000A5DA56 /* Products */,
 				7A1315CC1D4B990B00A5DA56 /* Frameworks */,
+				B91EAB0C2C7517288E7527D7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -243,6 +277,7 @@
 		7A1315B71D4B982000A5DA56 /* appIOSes5labTEST */ = {
 			isa = PBXGroup;
 			children = (
+				6E0750DD20E503200054D531 /* WXT */,
 				12D066CB1F4DDAE40075EBA4 /* Onboarding */,
 				7532C1BB1D5B6917004B03AF /* Model */,
 				75AC42C81DAF80C000B445FF /* ViewControllers */,
@@ -267,8 +302,18 @@
 				7569DA511E5C716A00C5D751 /* SAPFoundation.framework */,
 				7561921A1DBE1A90007F562C /* SAPOData.framework */,
 				128604D91E55B41600C698B5 /* SAPCommon.framework */,
+				704FB3CC6E8ED0B2902A8CB2 /* Pods_appIOSes5labTEST.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B91EAB0C2C7517288E7527D7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B8B644EFB6A0DAFDCA8B07D7 /* Pods-appIOSes5labTEST.debug.xcconfig */,
+				9347FCFABB8086BEB3BDC576 /* Pods-appIOSes5labTEST.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		DAB5406C7B513C323EAB7689 /* public */ = {
@@ -305,10 +350,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A1315C91D4B982000A5DA56 /* Build configuration list for PBXNativeTarget "appIOSes5labTEST" */;
 			buildPhases = (
+				9CAA1CAD080D415776ADB3B4 /* [CP] Check Pods Manifest.lock */,
 				7A1315B11D4B982000A5DA56 /* Sources */,
 				7A1315B21D4B982000A5DA56 /* Frameworks */,
 				7A1315B31D4B982000A5DA56 /* Resources */,
 				758AC1C31D5A265200311F39 /* Embed Frameworks */,
+				2FAD93A4A85EDCAE911E626F /* [CP] Embed Pods Frameworks */,
+				3821F745E809C1DCD90E8A4F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -331,7 +379,7 @@
 				TargetAttributes = {
 					7A1315B41D4B982000A5DA56 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = SG9XUF7LWG;
+						DevelopmentTeam = NK9V7A7DVK;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -366,16 +414,94 @@
 				7A1315C21D4B982000A5DA56 /* Assets.xcassets in Resources */,
 				CBCA7A991E3778A9001AF49E /* Main.storyboard in Resources */,
 				1277F7611F8E66AF0060AF58 /* SAPLogo@2x.png in Resources */,
+				6E0750E620E503340054D531 /* WXTeamsCallingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2FAD93A4A85EDCAE911E626F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-appIOSes5labTEST/Pods-appIOSes5labTEST-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${PODS_ROOT}/SparkSDK/Frameworks/Sbu.framework",
+				"${PODS_ROOT}/SparkSDK/Frameworks/Seu.framework",
+				"${PODS_ROOT}/SparkSDK/Frameworks/Wme.framework",
+				"${BUILT_PRODUCTS_DIR}/SparkSDK/SparkSDK.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sbu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Seu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Wme.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SparkSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-appIOSes5labTEST/Pods-appIOSes5labTEST-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3821F745E809C1DCD90E8A4F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-appIOSes5labTEST/Pods-appIOSes5labTEST-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9CAA1CAD080D415776ADB3B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-appIOSes5labTEST-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7A1315B11D4B982000A5DA56 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E0750EB20E503340054D531 /* WXSimpleTokenAuthenticator.swift in Sources */,
 				128B53061F8E667000E64DF6 /* SnapshotViewController.swift in Sources */,
 				12E84FE51F4ECF220061C99E /* OnboardingManager.swift in Sources */,
 				7A9F6FF61F3883D3000A1815 /* SAPFioriLoadingIndicator.swift in Sources */,
@@ -384,9 +510,11 @@
 				75AC42D41DAF824D00B445FF /* CollectionsViewController.swift in Sources */,
 				0312E13E20CE7C9400BA7422 /* ProductViewController.swift in Sources */,
 				7A1315B91D4B982000A5DA56 /* AppDelegate.swift in Sources */,
+				6E0750EA20E503340054D531 /* WXTManager.swift in Sources */,
 				E3768B05FAD71BE0F693BBA3 /* GWSAMPLEBASICEntitiesFactory.swift in Sources */,
 				C4045A18C281280DBACFCB11 /* GWSAMPLEBASICEntitiesMetadataChanges.swift in Sources */,
 				3B83E19D85FE114BE1A220D1 /* GWSAMPLEBASICEntitiesMetadataParser.swift in Sources */,
+				6E0750E720E503340054D531 /* WXTeamsCallingViewController.swift in Sources */,
 				45C8B57D8CD09922AD8737FF /* GWSAMPLEBASICEntitiesMetadataText.swift in Sources */,
 				C77A7AE39EB0F735BB2641BB /* GWSAMPLEBASICEntitiesStaticResolver.swift in Sources */,
 				F92BB8A9844DC527E390901C /* VHProductTypeCode.swift in Sources */,
@@ -400,6 +528,7 @@
 				03801F7820C677D900FDDDC0 /* DashboardViewController.swift in Sources */,
 				038B3ABC20CE9D4C00838298 /* HelperImages.swift in Sources */,
 				035EAB2220C7DEE0008E076E /* Utils.swift in Sources */,
+				6E0750E520E503340054D531 /* ALLoadingView.swift in Sources */,
 				23FC507BE9208A9E0F0A8051 /* GWSAMPLEBASICEntities.swift in Sources */,
 				CE9275C9E074CA2C2BCABE54 /* VHUnitWeight.swift in Sources */,
 				B4030B36B3CCC04A671D085F /* VHCountry.swift in Sources */,
@@ -408,6 +537,7 @@
 				0364C3DF20D79AB9004C4239 /* DetailProductViewController.swift in Sources */,
 				75218F33DD88B4E9F60E5782 /* VHUnitQuantity.swift in Sources */,
 				A68628967B46319000C3DE0B /* SalesOrderLineItem.swift in Sources */,
+				6E0750E820E503340054D531 /* WXTKit.swift in Sources */,
 				7C3672B99C730E0FCFD98559 /* Product.swift in Sources */,
 				0334FE1920C93A740099A668 /* ContactViewController.swift in Sources */,
 				31784CBA4B4F63AAB07D425F /* VHCurrency.swift in Sources */,
@@ -416,6 +546,7 @@
 				038CF60220CFB820007BDE35 /* ProductDetailViewController.swift in Sources */,
 				63A9FE981CC45568124ABF1B /* VHLanguage.swift in Sources */,
 				C9A48663A33E7730C45BCD39 /* Contact.swift in Sources */,
+				6E0750E920E503340054D531 /* WXTeamsDirectMessageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,11 +683,12 @@
 		};
 		7A1315CA1D4B982000A5DA56 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8B644EFB6A0DAFDCA8B07D7 /* Pods-appIOSes5labTEST.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = SG9XUF7LWG;
+				DEVELOPMENT_TEAM = NK9V7A7DVK;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -575,11 +707,12 @@
 		};
 		7A1315CB1D4B982000A5DA56 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9347FCFABB8086BEB3BDC576 /* Pods-appIOSes5labTEST.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = SG9XUF7LWG;
+				DEVELOPMENT_TEAM = NK9V7A7DVK;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (

@@ -72,7 +72,7 @@ class ProductViewController: UIViewController, UITableViewDataSource, SAPFioriLo
         objectCell.subheadlineText = "\(product.name ?? "")"
         objectCell.footnoteText = "\(product.category ?? "")"
         objectCell.descriptionText = "\(product.description ?? "")"
-        objectCell.detailImage = HelperImages.imageFromCategory(category: product.category!) // TODO: Replace with your image
+        // heobjectCell.detailImage = HelperImages.imageFromCategory(category: product.category!) // TODO: Replace with your image
      //   objectCell.detailImage?.accessibilityIdentifier = ""
         let price: String = "\(product.price!.toString() ) EUR"
         objectCell.statusText = price
